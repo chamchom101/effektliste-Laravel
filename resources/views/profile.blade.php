@@ -1,1 +1,2 @@
-{{$profiles->bruker->navn}}
+
+{{$profiles->navn}}    

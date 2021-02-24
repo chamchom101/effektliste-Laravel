@@ -1,5 +1,6 @@
 @foreach ($kategoris as $kategori)
 
-{{$kategori->titel1}}
+{{$kategori->title}}
+{{$kategori->kategori->titel}}
     
 @endforeach

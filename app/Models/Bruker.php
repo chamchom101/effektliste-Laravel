@@ -11,13 +11,17 @@ class Bruker extends Model
 {
     use HasFactory;
 
-    protected $filllabel = [
+    // protected $filllabel = [
 
-      'navn',
-      'hylle',
-      'rom'
+    //   'navn',
+    //   'hylle',
+    //   'rom',
+    //   'innsatt_nummer',
+    //   'betjent_navn'
 
-    ];
+    // ];
+
+    protected $guarded = [];
 
     public function felt () {
 
@@ -26,6 +30,6 @@ class Bruker extends Model
 
     public function profile () {
 
-      return $this->hansOne(Profile::class);
+      return $this->hasOne(Profile::class);
     }
 }

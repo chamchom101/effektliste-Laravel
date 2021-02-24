@@ -8,16 +8,20 @@ use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
 
-        $kategoris = Kategori::get();
+        $kategoris = Felt::get();
 
-        return view('kategori', [
+        return view('kategori', compact('kategoris'));
 
-            'kategoris' => $kategoris
+        //$kategoris = Kategori::get();
+
+       // return view('kategori', [
+
+            //'kategoris' => $kategoris
 
 
-        ]);
+       // ]);
 
     }
 }

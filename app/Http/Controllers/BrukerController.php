@@ -12,11 +12,11 @@ class BrukerController extends Controller
 
     public function index() {
 
-        $felts = Felt::get();
+        $brukers = Bruker::get();
 
         return view('welcome', [
             
-            'felts' => $felts
+            'brukers' => $brukers
             
             ]);
 
@@ -25,13 +25,15 @@ class BrukerController extends Controller
 
     public function profile ($id) {
 
-        $profile = Profile::find($id);
+        $profiles = Bruker::find($id);
 
-        return view('profile', [
+        return view('profile', compact('profiles'));
+
+        // return view('profile', [
             
-            'profiles' => $profile
+        //     'profiles' => $profiles
 
-        ]);
+        // ]);
 
 
     }

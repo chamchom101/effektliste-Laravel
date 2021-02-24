@@ -70,13 +70,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if($felts->count())
-                            @foreach ($felts as $felt )
+                            @if($brukers->count())
+                            @foreach ($brukers as $bruker )
                             <tr>
                                 <td>
                                     <img src="../../../app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular">
                                     <span class="font-weight-bold"></span>
-                                    <a href="{{route('profile', $felt->id)}}">{{$felt->bruker->navn}}</a>
+                                    <a href="{{route('profile', $bruker->id)}}">{{$bruker->navn}}</a>
                                     
                                 </td>
                                 <td>Peter Charls</td>
