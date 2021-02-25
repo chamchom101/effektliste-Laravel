@@ -30,6 +30,6 @@ class Bruker extends Model
 
     public function profile () {
 
-      return $this->hasOne(Profile::class);
+      return $this->hasMany(Profile::class);
     }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrukerController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 
@@ -21,9 +22,12 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', [BrukerController::class, 'index'])->name('welcome');
 
-Route::get('profile/{id}', [BrukerController::class, 'profile'])->name('profile');
+//Route::get('profile/{id}', [BrukerController::class, 'profile'])->name('profile');
 
 Route::get('kategori', [KategoriController::class, 'index'])->name('kategori');
 
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
+
+
+Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile');
