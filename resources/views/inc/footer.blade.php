@@ -40,6 +40,10 @@
     <!-- BEGIN: Page Vendor JS-->
     <script src="{{asset ('app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/extensions/toastr.min.js')}}"></script>
+    <script src="{{asset ('app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')}}"></script>
+    <script src="{{asset ('app-assets/js/scripts/forms/form-number-input.js')}}"></script>
+
+
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -58,6 +62,14 @@
           feather.replace({ width: 14, height: 14 });
         }
       })
+
+      $(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+$('#HentData').collapse('hide'{
+  toggle: true
+})
     </script>
   </body>
   <!-- END: Body-->

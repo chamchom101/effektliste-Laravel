@@ -13,7 +13,7 @@
                             <div class="d-flex flex-column ml-1">
                                 <div class="user-info mb-1">
                                     <h4 class="mb-0">{{$profiles->navn}}</h4>
-                                    <span class="card-text">Active</span>
+                                    <div class="badge badge-pill badge-light-success mt-1">Aktiv</div>
                                 </div>
                                 <div class="d-flex flex-wrap">
                                     <a href="./app-user-edit.html" class="btn btn-primary waves-effect waves-float waves-light">Edit</a>
@@ -57,7 +57,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check mr-1"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 <span class="card-text user-info-title font-weight-bold mb-0 mr-1">Status:</span>
                             </div>
-                            <p class="card-text mb-0">Active</p>
+                            <p class="badge badge-pill badge-light-success mb-0">Aktiv</p>
                         </div>
                         <div class="d-flex flex-wrap my-50">
                             <div class="user-info-title">
@@ -86,6 +86,10 @@
         </div>
     </div>
 </div>
+<button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#HentData" aria-expanded="true" aria-controls="HentData">
+    Nytt Objekt
+  </button>
+@include('bruker.create')
 
 <div class="card col-12 d-flex flex-column justify-content-between">
     <div class="card-header">d</div>
@@ -98,6 +102,7 @@
                 <th>Punkt</th>
                 <th>Rom</th>
                 <th>Lager</th>
+                <th>Kategori</th>
                 <th>Notat</th>
                 <th>Bilde</th>
                 <th>Mer</th>
@@ -114,7 +119,12 @@
                 </td>
                 <td>{{$bruker->antall_rom}}</td>
                 <td>{{$bruker->antall_lager}}</td>
-                <td>Liten beskjed om punktet</td>
+                <td>Klær</td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary waves-effect" data-toggle="popover" data-placement="top" data-container="body" data-original-title="Popover on top" data-content="Genseren har 2 hull på venstre arm.">
+                        INFO
+                    </button>
+                </td>
                 <td>Bilde</td>
                 <td><div class="dropdown">
                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow waves-effect waves-float waves-light" data-toggle="dropdown">
