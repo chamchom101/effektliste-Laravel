@@ -24,4 +24,18 @@ class KategoriController extends Controller
        // ]);
 
     }
+
+    public function hent(Request $request) {
+
+        if($request->submit == "Save")
+        {
+        dd('ddd');
+        }
+        else if($request->submit == "Update")
+        {
+        dd('ddddddddd');
+        }
+    
+
+    }
 }

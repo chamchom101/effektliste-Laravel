@@ -1,11 +1,11 @@
 <section id="input-mask-wrapper">
     <form action="{{route('kategori')}}" method="post">
         @csrf
-    <div class="row collapse" id="HentData">
-        <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12 collapse"  id="EditData">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Ny effektobjekt</h4>
+                    <h4 class="card-title">Oppdater Objektet</h4>
                 </div>
                 <div class="card-body">
                     <div class="row">

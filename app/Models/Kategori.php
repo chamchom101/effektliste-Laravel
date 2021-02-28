@@ -14,4 +14,22 @@ class Kategori extends Model
 
         return $this->hasMany(Felt::class);
     }
+
+    public function bruker () {
+
+        return $this->belongsTo(Bruker::class);
+    }
+
+
+    public function kategori () {
+
+        return $this->belongsTo(Felt::class);
+    }
+
+    public function felts () { //User
+
+        return $this->hasMany(Felt::class);
+    }
+
+
 }

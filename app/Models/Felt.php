@@ -28,4 +28,9 @@ class Felt extends Model
 
         return $this->belongsTo(Kategori::class);
     }
+
+    public function felt () {
+
+        return $this->hasMany(kategori::class);
+    }
 }

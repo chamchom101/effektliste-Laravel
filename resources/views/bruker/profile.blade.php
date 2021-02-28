@@ -86,10 +86,21 @@
         </div>
     </div>
 </div>
-<button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#HentData" aria-expanded="true" aria-controls="HentData">
-    Nytt Objekt
-  </button>
+<button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#HentData" aria-expanded="true" aria-controls="HentData">Nytt
+</button>
+<button class="btn btn-primary mb-2 ml-2" type="button" data-toggle="collapse" data-target="#EditData">Oppdater
+</button>
+
+ 
+
 @include('bruker.create')
+@include('bruker.edit')
+
+
+
+
+
+
 
 <div class="card col-12 d-flex flex-column justify-content-between">
     <div class="card-header">d</div>
@@ -109,17 +120,27 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($brukers as $bruker)
+            <!--$brukers as $bruker
+            
+            -->
+            @foreach ($tests as $test)
+              @foreach ($test->felt as $felt )
+                  
+              
+              
+                  
                 
             
             <tr>
                 <td>
                     <img src="../../../app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular">
-                    <span class="font-weight-bold">{{$bruker->title}}</span>
+                    <span class="font-weight-bold">{{$felt->title}}</span>
                 </td>
-                <td>{{$bruker->antall_rom}}</td>
-                <td>{{$bruker->antall_lager}}</td>
-                <td>Klær</td>
+                <td>{{$felt->antall_rom}}</td>
+                <td>{{$felt->antall_lager}}</td>
+                <td>{{$felt->kategori->titel}}</td>
+                
+
                 <td>
                     <button type="button" class="btn btn-outline-primary waves-effect" data-toggle="popover" data-placement="top" data-container="body" data-original-title="Popover on top" data-content="Genseren har 2 hull på venstre arm.">
                         INFO
@@ -143,9 +164,14 @@
                 </div></td>
             </tr>
             @endforeach
+            @endforeach
+           
+         
+            
            
         </tbody>
     </table>
+    
 </div>
 
 </div>

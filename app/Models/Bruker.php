@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Felt;
 use App\Models\Profile;
+use App\Models\Kategori;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -32,4 +33,14 @@ class Bruker extends Model
 
       return $this->hasMany(Profile::class);
     }
+
+    public function kategori () {
+
+      return $this->hasMany(Kategori::class);
+    }
+
+    public function felts () { //country
+
+      return $this->hasManyThrough(Felt::class, kategori::class);
+  }
 }

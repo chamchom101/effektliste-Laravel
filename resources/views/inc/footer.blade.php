@@ -67,9 +67,7 @@
   $('[data-toggle="popover"]').popover()
 })
 
-$('#HentData').collapse('hide'{
-  toggle: true
-})
+
     </script>
   </body>
   <!-- END: Body-->

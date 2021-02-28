@@ -25,6 +25,7 @@ Route::get('/', [BrukerController::class, 'index'])->name('welcome');
 //Route::get('profile/{id}', [BrukerController::class, 'profile'])->name('profile');
 
 Route::get('kategori', [KategoriController::class, 'index'])->name('kategori');
+Route::post('kategori', [KategoriController::class, 'hent']);
 
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
