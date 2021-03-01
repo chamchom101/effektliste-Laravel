@@ -6,7 +6,7 @@
 <section id="multiple-column-form">
 
     
-    <form action="{{route('register')}}" method="post">
+    <form action="{{route('register', $id)}}" method="post">
     @csrf
 
 @if (session('status'))

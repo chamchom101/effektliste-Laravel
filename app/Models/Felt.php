@@ -16,7 +16,9 @@ class Felt extends Model
         'bruker_id',
         'title',
         'antall_rom',
-        'antall_lager'
+        'antall_lager',
+        'info',
+        'kategori_id'
     ];
 
     public function bruker () {
