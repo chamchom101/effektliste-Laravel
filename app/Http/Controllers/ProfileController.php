@@ -58,17 +58,48 @@ class ProfileController extends Controller
         ]);
          
 
-        if($LagreObjekt == false) {
+        if($LagreObjekt == true) {
 
-            dd($LagreObjekt);
+            return back()->with('status', 'Objekt opprettet uten feil');
 
         } else {
 
-            dd('Noe har gått galt');
+            return back()->with('status', 'Noe har gått galt under registrering');
 
 
         }
         //$lagreKategori = Kategori::
+
+
+    }
+
+    public function edit ($id) {
+
+        $editObjekt = Felt::find($id);
+        $katObjekt = Kategori::get();
+        $headerObjekt = Kategori::find($id);
+
+        return view('bruker.edit', compact('editObjekt', 'katObjekt', 'headerObjekt'));
+
+
+    }
+
+    public function update (Request $request, $id) {
+
+
+        $feltUpdate = Felt::find($id);
+        $feltUpdate->bruker_id = $request->input('bruker_id');
+        $feltUpdate->title = $request->input('objekt');
+        $feltUpdate->antall_rom = $request->input('rom');
+        $feltUpdate->antall_lager = $request->input('lager');
+        $feltUpdate->info = $request->input('info');
+        $feltUpdate->kategori_id = $request->input('kategori');
+
+       // dd($request->all());
+        $feltUpdate->save();
+        
+        return  redirect('/profile/' . $feltUpdate->id);
+
 
 
     }
