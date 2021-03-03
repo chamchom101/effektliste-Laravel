@@ -31,5 +31,8 @@ Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
 
 
+
 Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile');
 Route::post('profile/{id}', [ProfileController::class, 'store']);
+Route::get('profile/{id}/edit', [ProfileController::class, 'edit'])->name('bruker.edit');
+Route::put('/profile/{id}', [ProfileController::class, 'update']);

@@ -11,6 +11,9 @@ class Felt extends Model
 {
     use HasFactory;
 
+    protected $table = 'felts';
+    public $timestamp = false;
+
     protected $fillable = [
 
         'bruker_id',
@@ -20,6 +23,8 @@ class Felt extends Model
         'info',
         'kategori_id'
     ];
+
+
 
     public function bruker () {
 

@@ -93,8 +93,8 @@
 
  
 
+
 @include('bruker.create')
-@include('bruker.edit')
 
 
 
@@ -104,7 +104,19 @@
 
 <div class="card col-12 d-flex flex-column justify-content-between">
     <div class="card-header">d</div>
-    <div class="card-body">d</div>
+    <div class="card-body">
+
+        @if (session('status'))
+          <div class="row">
+         <div class="alert alert-success" id="type-success" role="alert">
+            <h4 class="alert-heading">Godkjent</h4>
+            <div class="alert-body">
+                {{ session('status') }}
+            </div>
+        </div>
+    </div>
+        @endif
+    </div>
     <div class="row">
 <div class="table-responsive">
     <table class="table table-hover">
@@ -142,7 +154,7 @@
                 
 
                 <td>
-                    <button type="button" class="btn btn-outline-primary waves-effect" data-toggle="popover" data-placement="top" data-container="body" data-original-title="Popover on top" data-content="Genseren har 2 hull på venstre arm.">
+                    <button type="button" class="btn btn-outline-primary waves-effect" data-toggle="popover" data-placement="top" data-container="body" data-original-title="Popover on top" data-content="{{$felt->info}}">
                         INFO
                     </button>
                 </td>
@@ -152,7 +164,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">
+                        <a class="dropdown-item" href="{{route('bruker.edit', $felt->id)}}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 mr-50"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
                             <span>Edit</span>
                         </a>
