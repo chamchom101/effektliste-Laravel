@@ -42,6 +42,9 @@
     <script src="{{asset ('app-assets/vendors/js/extensions/toastr.min.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')}}"></script>
     <script src="{{asset ('app-assets/js/scripts/forms/form-number-input.js')}}"></script>
+    <script src="{{asset ('app-assets/js/vendors/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset ('app-assets/js/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{asset ('app-assets/js/vendors/jquery/jquery-ui.js')}}"></script>
 
 
     <!-- END: Page Vendor JS-->
@@ -67,6 +70,35 @@
   $('[data-toggle="popover"]').popover()
 })
 
+$( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
 
     </script>
   </body>

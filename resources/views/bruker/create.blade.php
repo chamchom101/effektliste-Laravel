@@ -11,7 +11,7 @@
                     <div class="row">
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                             <label for="credit-card">Objekt</label>
-                            <input type="text" name="title" class="form-control credit-card-mask @error('title') border border-danger @enderror" placeholder="Genser, bukser, sokker" id="credit-card">
+                            <input type="text" id="tags" name="title" class="form-control credit-card-mask @error('title') border border-danger @enderror" placeholder="Genser, bukser, sokker" id="credit-card">
                             @error('title')
                             <div class="text-danger">
 

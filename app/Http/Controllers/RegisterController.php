@@ -44,4 +44,13 @@ class RegisterController extends Controller
 
 
     }
+
+    public function destroy ($id){
+
+        $bruker = Bruker::find($id);
+        $bruker->delete();
+
+        return back();
+
+    }
 }

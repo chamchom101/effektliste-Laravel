@@ -97,9 +97,44 @@ class ProfileController extends Controller
 
        // dd($request->all());
         $feltUpdate->save();
-        
-        return  redirect('/profile/' . $feltUpdate->id);
 
+        if($feltUpdate == true) {
+
+            return  redirect('/profile/' . $feltUpdate->id)->with('status', 'Redigering gjennomført uten feil');
+
+
+        } else {
+
+            return  redirect('/profile/' . $feltUpdate->id)->with('status', 'Noe har gått galt under redigering');
+        
+            
+
+        }
+        
+        
+
+
+
+    }
+
+    public function destroy ($id) {
+
+        $deleteFelt = Felt::find($id);
+        $deleteFelt->delete();
+
+        if($deleteFelt == true) {
+
+            return  back()->with('status', 'Sletting av objekt ' . $deleteFelt->title . ' gjennomført uten feil');
+
+
+        } else {
+
+            return  back()->with('status', 'Noe har gått galt under Sletting');
+        
+            
+
+        }
+        
 
 
     }

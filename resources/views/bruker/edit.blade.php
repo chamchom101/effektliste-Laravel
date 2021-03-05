@@ -31,7 +31,7 @@
                                 <label for="credit-card">Kategori</label>
                                 <select class="form-control" name="kategori" id="basicSelect">
                                     
-                                    <option value="{{$headerObjekt->id}}">{{$headerObjekt->titel}}</option>
+                                    <option value="{{$editObjekt->kategori_id}}">{{$headerObjekt->titel}}</option>
 
                                     @foreach ($katObjekt as $kat)
                                     
