@@ -21,7 +21,8 @@ class Felt extends Model
         'antall_rom',
         'antall_lager',
         'info',
-        'kategori_id'
+        'kategori_id',
+        'image'
     ];
 
 

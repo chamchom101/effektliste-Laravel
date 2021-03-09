@@ -55,7 +55,19 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        INFO:
+                        INFO:  @if (session('status'))
+                        
+                        <div class="row">
+                            <div class="col-12">
+                       <div class="alert alert-success" id="type-success" role="alert">
+                          <h4 class="alert-heading">Godkjent</h4>
+                          <div class="alert-body">
+                              {{ session('status') }}
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                      @endif
                     </p>
                 </div>
                 <div class="table-responsive">

@@ -31,7 +31,7 @@
                                 <label for="credit-card">Kategori</label>
                                 <select class="form-control" name="kategori" id="basicSelect">
                                     
-                                    <option value="{{$editObjekt->kategori_id}}">{{$headerObjekt->titel}}</option>
+                                    <option value="{{$editObjekt->kategori_id}}">Velg Kategori</option>
 
                                     @foreach ($katObjekt as $kat)
                                     
@@ -55,7 +55,7 @@
                             </div>
                             <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                 <label for="credit-card">Last opp bildet</label>
-                                <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
+                                <input type="file" class="form-control-file" value="{{$editObjekt->image}}" name="image" id="exampleFormControlFile1">
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary mr-1 waves-effect waves-float waves-light">Submit</button>

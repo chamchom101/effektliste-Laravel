@@ -50,7 +50,15 @@ class RegisterController extends Controller
         $bruker = Bruker::find($id);
         $bruker->delete();
 
-        return back();
+        if($bruker == true) {
+
+            return back()->with('status', 'Sletting gjennomført uten feil');
+
+        } else {
+        
+            return back()->with('status', 'Noe har gått galt under Sletting');
+
+        }
 
     }
 }

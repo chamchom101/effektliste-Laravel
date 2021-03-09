@@ -38,6 +38,14 @@
         </li>
         <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Registrer</span></a>
         </li>
+        <li class=" navigation-header"><span data-i18n="User Interface">Tilpass</span><i data-feather="more-horizontal"></i>
+        </li>
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="folder"></i><span class="menu-title text-truncate" data-i18n="Typography">Kategori</span></a>
+        </li>
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="list"></i><span class="menu-title text-truncate" data-i18n="Typography">Objekter</span></a>
+        </li>
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="printer"></i><span class="menu-title text-truncate" data-i18n="Typography">Print</span></a>
+        </li>
         
        
        

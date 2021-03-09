@@ -1,5 +1,5 @@
 <section id="input-mask-wrapper">
-    <form action="{{route('profile', $profiles->id)}} " method="post">
+    <form action="{{route('profile', $profiles->id)}}" enctype="multipart/form-data" method="post">
         @csrf
     <div class="row collapse" id="HentData">
         <div class="col-md-12">
@@ -10,8 +10,19 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                            <label for="credit-card">Objekt</label>
-                            <input type="text" id="tags" name="title" class="form-control credit-card-mask @error('title') border border-danger @enderror" placeholder="Genser, bukser, sokker" id="credit-card">
+                            <label for="mytitle">Objekt</label>
+                            <input type="text" list="obj" id="mytitle" name="title" class="form-control credit-card-mask @error('title') border border-danger @enderror" placeholder="Genser, bukser, sokker" />
+                            <datalist id="obj">
+                                
+                                    
+                                @foreach ($objekters as $objekt )
+                                    
+                                
+                                <option value="{{$objekt->name}}">
+
+                                    @endforeach
+                                
+                            </datalist>
                             @error('title')
                             <div class="text-danger">
 

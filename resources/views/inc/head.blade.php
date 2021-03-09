@@ -47,6 +47,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/plugins/extensions/ext-component-toastr.min.css')}}">
     <!-- END: Page CSS-->
 
+    <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/style.css')}}">
+
 
 
   </head>
