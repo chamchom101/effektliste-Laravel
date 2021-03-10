@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\BrukerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DokumentController;
@@ -46,3 +47,5 @@ Route::get('profile/delete/{id}', [ProfileController::class, 'destroy']);
 
 Route::get('dokument/{id}', [DokumentController::class, 'index'])->name('dokument.preview');
 Route::get('dokument/print/{id}', [DokumentController::class, 'print'])->name('dokument.print');
+
+Route::get('/log/{id}', [LogController::class, 'index'])->name('log.view');
