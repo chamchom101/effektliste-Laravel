@@ -12,7 +12,7 @@ class BrukerController extends Controller
 
     public function index() {
 
-        $brukers = Bruker::get();
+        $brukers = Bruker::paginate(2);
 
         return view('welcome', [
             

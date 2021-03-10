@@ -23,8 +23,8 @@ class ProfileController extends Controller
        
        //HasManyThrough relasjon Bruker->Felt->kategori.
        //Se \App\Models\Bruker->Felt->Kategori
-       //$tests = Bruker::where('id', $id)->get();
-       $tests = Bruker::where('id', $id)->paginate(5);
+       $tests = Bruker::with('felt')->where('id', $id)->get();
+       //$tests = Felt::with('bruker')->where('id', $id)->paginate(5);
        $objekters = Objekt::get();
        
 

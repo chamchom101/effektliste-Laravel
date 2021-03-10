@@ -129,8 +129,16 @@
                             <p>Finner ingen data</p>
                             @endif
 
+
+
                         </tbody>
                     </table>
+                    <div class="row">
+                        <div class="col-12 mt-3 pb-3 pl-2">
+
+                    {{$brukers->links()}}
+                </div>
+                </div>
                 </div>
             </div>
         </div>

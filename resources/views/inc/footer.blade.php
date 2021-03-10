@@ -58,6 +58,7 @@
 
     <!-- BEGIN: Page JS-->
     <script src="{{asset ('app-assets/js/scripts/pages/dashboard-ecommerce.min.js')}}"></script>
+    <script src="{{asset ('app-assets/DataTables/datatables.min.js')}}"></script>
     <!-- END: Page JS-->
 
     <script>
@@ -67,10 +68,11 @@
         }
       })
 
-      $(function () {
-  $('[data-toggle="popover"]').popover()
-})
 
+
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
 
     </script>
   </body>
