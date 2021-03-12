@@ -148,7 +148,7 @@
                                     @if($felt->image === null)
                     <img src="{{asset('public/images/unknown.png')}}" class="rounded mr-1" height="30" alt="Googleee Chrome">
                     @else
-                    <img src="{{asset($felt->image)}}" class="rounded mr-1" id="myImg" height="30" alt="Google Chrome">
+                    <img src="{{asset('/storage/images/' . $felt->image)}}" class="rounded mr-1" id="myImg" height="30" alt="Google Chrome">
                     @endif
                                 </td>
                                 <td>

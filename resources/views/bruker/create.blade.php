@@ -48,20 +48,20 @@
                         </div>
                         <input type="hidden" value="{{$profiles->id}}" name="bruker_id"> 
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                            <label for="credit-card">Antall på rom</label>
+                            <label for="rom">Antall på rom</label>
                             <div class="input-group input-group-lg bootstrap-touchspin">
                                 <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected"></span><input type="number" class="touchspin form-control" name="rom" value="0"><span class="input-group-btn input-group-append bootstrap-touchspin-injected"></span>
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                            <label for="credit-card">Antall på lager</label>
+                            <label for="lager">Antall på lager</label>
                             <div class="input-group input-group-lg bootstrap-touchspin">
                                 <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected"></span><input type="number" class="touchspin form-control" name="lager" value="0"><span class="input-group-btn input-group-append bootstrap-touchspin-injected"></span>
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                            <label for="credit-card">Last opp bildet</label>
-                            <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
+                            <label for="image">Last opp bildet</label>
+                            <input type="file" class="form-control-file" value="test" name="image" id="exampleFormControlFile1">
                         </div>
                         
 

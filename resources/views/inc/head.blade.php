@@ -46,6 +46,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/plugins/charts/chart-apex.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/plugins/extensions/ext-component-toastr.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/DataTables/datatables.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/jquery.dataTables.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/buttons.dataTables.min.css')}}">
     <!-- END: Page CSS-->
 
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/style.css')}}">

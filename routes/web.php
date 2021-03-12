@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DokumentController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CreateKategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,9 @@ Route::get('/', [BrukerController::class, 'index'])->name('welcome');
 /* Kategori (Blir ikke brukt) */
 Route::get('kategori', [KategoriController::class, 'index'])->name('kategori');
 Route::post('kategori', [KategoriController::class, 'hent']);
+
+Route::get('kategori/create', [CreateKategoriController::class, 'index'])->name('kategori.create');
+Route::post('kategori', [CreateKategoriController::class, 'store']);
 
 /* Registrering av nye brukere */
 Route::get('register', [RegisterController::class, 'index'])->name('register');

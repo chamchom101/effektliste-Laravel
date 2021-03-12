@@ -40,6 +40,7 @@
     <!-- BEGIN: Page Vendor JS-->
     <script src="{{asset ('app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/extensions/toastr.min.js')}}"></script>
+    <script src="{{asset ('app-assets/js/scripts/extensions/ext-component-toastr.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')}}"></script>
     <script src="{{asset ('app-assets/js/scripts/forms/form-number-input.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/jquery/jquery-ui.js')}}"></script>
@@ -71,7 +72,16 @@
 
 
 $(document).ready(function() {
-    $('#example').DataTable();
+    $('#example').DataTable( {
+    buttons: [
+        {
+            extend: 'print',
+            text: 'Print current page',
+            autoPrint: false
+        }
+    ]
+} );
+
 } );
 
     </script>

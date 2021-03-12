@@ -40,7 +40,7 @@
         </li>
         <li class=" navigation-header"><span data-i18n="User Interface">Tilpass</span><i data-feather="more-horizontal"></i>
         </li>
-        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="folder"></i><span class="menu-title text-truncate" data-i18n="Typography">Kategori</span></a>
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('kategori.create')}}"><i data-feather="folder"></i><span class="menu-title text-truncate" data-i18n="Typography">Kategori</span></a>
         </li>
         <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="list"></i><span class="menu-title text-truncate" data-i18n="Typography">Objekter</span></a>
         </li>

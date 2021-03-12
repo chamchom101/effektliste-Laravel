@@ -10,6 +10,14 @@ class Kategori extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+
+        'titel',
+        'betjent'
+
+
+    ];
+
     public function felt () {
 
         return $this->hasMany(Felt::class);

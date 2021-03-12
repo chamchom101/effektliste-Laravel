@@ -8,6 +8,9 @@ use App\Models\Objekt;
 use App\Models\Profile;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Activitylog\Models\Activity;
 use Symfony\Component\Console\Input\Input;
 
 class ProfileController extends Controller
@@ -40,14 +43,9 @@ class ProfileController extends Controller
         $this->validate($request, [
 
             'title' => 'required',
-            'image' => 'image'
+            'image' => 'nullable'
 
         ]);
-
-        //dd($request->input('kategori'), $request->input('title'), $request->input('bruker_id'));
-
-        $imageName = time(). '.' .$request->image->extension();
-        
 
         $LagreObjekt = Felt::Create([
 
@@ -57,10 +55,24 @@ class ProfileController extends Controller
             'info'  => $request->info,
             'antall_rom'   => $request->rom,
             'antall_lager' => $request->lager,
-            'image' => $request->image->move('public/images/', $imageName)
-            
-        ]);
-         
+            //'image' => $request->image->move('public/images/', $imageName)
+
+            ]);
+
+           
+
+        //dd($request->input('kategori'), $request->input('title'), $request->input('bruker_id'));
+        //$imageName = time(). '.' .$request->image->extensions();
+
+       if($request->hasFile('image')) {
+           
+       $filename = $request->image->getClientOriginalname();
+       $request->image->StoreAs('images', $filename, 'public');
+       $imageID = Felt::all()->last()->id;
+       Felt::find($imageID)->update(['image' => $filename]);
+
+
+       }
 
         if($LagreObjekt == true) {
 
@@ -88,7 +100,7 @@ class ProfileController extends Controller
 
     }
 
-    public function update (Request $request, $id) {
+    public function update (Request $request, Activity $activity, $id) {
 
         $feltUpdate = Felt::find($id);
         $feltUpdate->bruker_id = $request->input('bruker_id');
@@ -97,9 +109,26 @@ class ProfileController extends Controller
         $feltUpdate->antall_lager = $request->input('lager');
         $feltUpdate->info = $request->input('info');
         $feltUpdate->kategori_id = $request->input('kategori');
+        //$activity->causer_id = $request->input('bruker_id');
+        //$activity->description = $request->input('objekt');
+
+
+        
+
+
 
        // dd($request->all());
         $feltUpdate->save();
+        //$activity->save();
+
+        // $lastId =  DB::table('activity_log')->latest('id')->first();
+        // $loggUpdate = Activity::find($id);
+        // $loggUpdate->causer_id = $request->input('bruker_id');
+        // $loggUpdate->save();
+
+
+
+
 
         if($feltUpdate == true) {
 

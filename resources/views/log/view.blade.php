@@ -2,21 +2,29 @@
 
 @section('content')
 
-    <div class="row justify-content-center">
-        <div class="col-xl-12 col-lg-8 col-md-7 d-felx p-2">
-            <div class="card">
-                <div class="card-header border-bottom">
-                    <h4 class="card-title">Multilingual</h4>
-                </div>
+<div class="row" id="basic-table">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Table Basic</h4>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Using the most basic table Leanne Grahamup, here’s how <code>.table</code>-based tables look in Bootstrap. You
+                    can use any example of below table for your table and it can be use with any type of bootstrap tables.
+                </p>
+            </div>
+            <div class="table-responsive">
                 <table id="example" class="display" >
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Objekt fra</th>
+                            <th>Objekt til</th>
+                            <th>Rom fra</th>
+                            <th>Rom til</th>
+                            <th>Lager fra</th>
+                            <th>Lager til</th>
+                            <th>Dato</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,30 +34,46 @@
                             
                        
                         <tr>
-                            <td>{{$logg->properties['old']['title']}}</td>
-                            <td>{{$logg->properties['attributes']['title']}}</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
+                            <td>
+                                <img src="../../../app-assets/images/icons/rarrow.png" class="mr-75" height="20" width="20" alt="Angular">
+                                {{$logg->properties['old']['title'] ?? ''}}</td>
+                            <td>
+                                <img src="../../../app-assets/images/icons/garrow.png" class="mr-75" height="20" width="20" alt="Angular">
+                                {{$logg->properties['attributes']['title'] ?? ''}}</td>
+                            <td>
+                                <img src="../../../app-assets/images/icons/rarrow.png" class="mr-75" height="20" width="20" alt="Angular">
+                                {{$logg->properties['old']['antall_rom'] ?? ''}}</td>
+                            <td>
+                                <img src="../../../app-assets/images/icons/garrow.png" class="mr-75" height="20" width="20" alt="Angular">
+                                {{$logg->properties['attributes']['antall_rom'] ?? ''}}</td>
+                            <td>
+                                <img src="../../../app-assets/images/icons/rarrow.png" class="mr-75" height="20" width="20" alt="Angular">
+                                {{$logg->properties['old']['antall_lager'] ?? ''}}</td>
+                            </td>
+                            <td>
+                                <img src="../../../app-assets/images/icons/garrow.png" class="mr-75" height="20" width="20" alt="Angular">
+                                {{$logg->properties['attributes']['antall_lager'] ?? ''}}</td>
+                            </td>
+                            <td>{{$logg->created_at}}</td>
                         </tr>
                         @endforeach
                       
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Objekt fra</th>
+                            <th>Objekt til</th>
+                            <th>Rom fra</th>
+                            <th>Rom til</th>
+                            <th>Lager fra</th>
+                            <th>Lager til</th>
+                            <th>Dato</th>
                         </tr>
                     </tfoot>
                 </table>
             </div>
         </div>
     </div>
-
+</div>
 
 @endsection
