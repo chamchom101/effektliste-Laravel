@@ -133,7 +133,7 @@
                             <span class="font-weight-bold">{{$felt->antall_lager}}</span>
                         </td>
                         <td class="py-1">
-                            <span class="font-weight-bold">{{$felt->kategori->titel}}</span>
+                            <span class="font-weight-bold">{{$felt->kategori->titel ?? ''}}</span>
                         </td>
                     </tr>
                     @endforeach

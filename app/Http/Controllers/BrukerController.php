@@ -13,12 +13,9 @@ class BrukerController extends Controller
     public function index() {
 
         $brukers = Bruker::paginate(2);
+        $countFelt = Felt::where('bruker_id', 1)->count(); //Tell hvormange objekter hver enkelt bruker har.
 
-        return view('welcome', [
-            
-            'brukers' => $brukers
-            
-            ]);
+        return view('welcome', compact('brukers', 'countFelt'));
 
         //$brukers = Felt::all();
     }

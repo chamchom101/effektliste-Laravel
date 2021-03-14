@@ -47,7 +47,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="">
+                                    <a class="dropdown-item" href="{{route('kategori.edit', $kategori->id)}}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 mr-50"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
                                         <span>Edit</span>
                                     </a>
@@ -62,6 +62,7 @@
                         </tr>
                                               
                     </tbody>
+ 
                     @endforeach
                 </table>
             </div>
@@ -70,81 +71,12 @@
 </div>
 
 
-<div class="col-lg-4 col-md-6 col-12">
-    <div class="card card-developer-meetup">
-        <div class="meetup-img-wrapper rounded-top text-center">
-            <img src="../../../app-assets/images/illustration/email.svg" alt="Meeting Pic" height="170">
-        </div>
-        <div class="card-body">
-            <div class="meetup-header d-flex align-items-center">
-                <div class="meetup-day">
-                    <h6 class="mb-0">THU</h6>
-                    <h3 class="mb-0">24</h3>
-                </div>
-                <div class="my-auto">
-                    <h4 class="card-title mb-25">Kategori</h4>
-                    <p class="card-text mb-0">Lag riktig kategori til riktig objekt</p>
-                </div>
-            </div>
-            @if (session('status'))
 
-         <div class="alert alert-success" id="type-success" role="alert">
-            <h4 class="alert-heading">Godkjent</h4>
-            <div class="alert-body">
-                {{ session('status') }}
-            </div>
-        </div>
-        @endif
-            <form method="post" action="{{asset('kategori')}}">
-                @csrf
-            <div class="media">
-                <div class="avatar bg-light-primary rounded mr-1">
-                    
-                </div>
-                <div class="media-body">
-                    
-                        <div class="form-group">
-                            <label for="basicInput">Kategori</label>
-                            <input type="text" class="form-control @error('kategori') border border-danger @enderror" name="kategori" id="basicInput">
-                            @error('kategori')
-                            <div class="text-danger">
-
-                          {{$message}}
-
-                    </div>
-                          @enderror
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="media mt-2">
-                <div class="avatar bg-light-primary rounded mr-1">
-                    
-                </div>
-                <div class="media-body">
-                    
-                    <div class="form-group">
-                        <label for="basicInput">Betjent</label>
-                        <input type="text" class="form-control @error('betjent') border border-danger @enderror" id="basicInput" name="betjent">
-                        @error('betjent')
-                        <div class="text-danger">
-
-                      {{$message}}
-
-                </div>
-                      @enderror
-                    
-                </div>
-            </div>
-            </div>
-
-            <div class="media">
-
-                <button type="submit" class="btn btn-gradient-primary ml-1">Send</button>
-            </div>
-            <form>
-        </div>
-    </div>
-</div>
+@if(Route::is('kategori.create'))
+@include('kategori.add')
+@endif
+@if(Route::is('kategori.edit'))
+@include('kategori.edit')
+@endif
 
 @endsection

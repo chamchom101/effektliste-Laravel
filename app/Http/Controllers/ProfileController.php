@@ -11,14 +11,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Activitylog\Models\Activity;
+use RealRashid\SweetAlert\Facades\Alert;
 use Symfony\Component\Console\Input\Input;
 
 class ProfileController extends Controller
 {
     public function index ($id) {
 
+
        $profiles = Bruker::with('felt')->find($id);
        $brukers = Bruker::find($id)->felt;
+       
        //$kategoris = Felt::find($id)->kategori;
 
        // Vise kategoriene i profilsiden.
@@ -76,7 +79,7 @@ class ProfileController extends Controller
 
         if($LagreObjekt == true) {
 
-            return back()->with('status', 'Objekt opprettet uten feil');
+            return back()->withSuccessMessage('Nytt Objekt lagret uten feil');
 
         } else {
 
@@ -132,7 +135,7 @@ class ProfileController extends Controller
 
         if($feltUpdate == true) {
 
-            return  redirect('/profile/' . $feltUpdate->bruker_id)->with('status', 'Redigering gjennomført uten feil');
+            return  redirect('/profile/' . $feltUpdate->bruker_id)->withSuccessMessage('Redigering gjennomført uten feil');
 
 
         } else {
@@ -152,11 +155,13 @@ class ProfileController extends Controller
     public function destroy ($id) {
 
         $deleteFelt = Felt::find($id);
-        $deleteFelt->delete();
+        $deleteFelt->delete(); 
+
+            
 
         if($deleteFelt == true) {
 
-            return  back()->with('status', 'Sletting av objekt ' . $deleteFelt->title . ' gjennomført uten feil');
+            return  back()->withSuccessMessage('' . $deleteFelt->title . ' Slettet uten feil');
 
 
         } else {

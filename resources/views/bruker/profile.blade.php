@@ -140,7 +140,7 @@
                                 </td>
                                 <td>{{$felt->antall_rom}}</td>
                                 <td>{{$felt->antall_lager}}</td>
-                                <td>{{$felt->kategori->titel}}</td>
+                                <td>{{$felt->kategori->titel ?? ''}}</td>
                                 <td><button type="button" class="btn btn-outline-primary waves-effect" data-toggle="popover" data-placement="top" data-container="body" data-original-title="Popover on top" data-content="{{$felt->info}}">
                                     INFO
                                 </button></td>

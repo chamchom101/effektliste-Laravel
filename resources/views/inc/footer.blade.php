@@ -61,6 +61,8 @@
     <script src="{{asset ('app-assets/js/scripts/pages/dashboard-ecommerce.min.js')}}"></script>
     <script src="{{asset ('app-assets/DataTables/datatables.min.js')}}"></script>
     <!-- END: Page JS-->
+    
+    @include('sweetalert::alert')
 
     <script>
       $(window).on('load',  function(){

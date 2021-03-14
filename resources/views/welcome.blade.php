@@ -76,8 +76,8 @@
                             <tr>
                                 <th>Navn</th>
                                 <th>Logg</th>
-                                <th>Fil</th>
-                                <th>Status</th>
+                                <th>Rom/Lager</th>
+                                <th></th>
                                 <th>Mer</th>
                             </tr>
                         </thead>
@@ -91,18 +91,14 @@
                                     <a href="{{route('profile', $bruker->id)}}">{{$bruker->navn}}</a>
                                     
                                 </td>
-                                <td>Peter Charls</td>
+                                <td><div class="avatar-content">
+                                    <a href="{{route('log.view', $bruker->id)}}">
+                                    <img src="../../../app-assets/images/icons/loggicon.png" alt="Toolbar svg">
+                                    </a>
+                                </div></td>
                                 <td>
                                     <div class="avatar-group">
-                                        <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Lilian Nenez">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                        <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                        <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
+                                        {{$countFelt}}
                                     </div>
                                 </td>
                                 <td><span class="badge badge-pill badge-light-primary mr-1">Active</span></td>

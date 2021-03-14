@@ -33,6 +33,8 @@ Route::post('kategori', [KategoriController::class, 'hent']);
 
 Route::get('kategori/create', [CreateKategoriController::class, 'index'])->name('kategori.create');
 Route::post('kategori', [CreateKategoriController::class, 'store']);
+Route::get('kategori/{id}/edit', [CreateKategoriController::class, 'edit'])->name('kategori.edit');
+Route::put('kategori/{id}', [CreateKategoriController::class, 'update']);
 
 /* Registrering av nye brukere */
 Route::get('register', [RegisterController::class, 'index'])->name('register');
