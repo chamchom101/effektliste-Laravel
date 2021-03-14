@@ -1,0 +1,6 @@
+Hva må gjøres.
+* Objekter: (Create, Edit);
+* Logg: Må organisere logg filen bedre. Lage en funksjon som gir beskjed at nye objekter har blitt lagt til eksesterende brukere. evt mulighet til å ta utskrift
+av dette.
+*Logg: Utskrifts funksjon (Kan bruke det samme systemet, jeg bruker i dokumenter).
+
