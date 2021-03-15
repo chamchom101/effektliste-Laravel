@@ -74,5 +74,22 @@ class CreateKategoriController extends Controller
 
     }
 
+    public function destroy ($id){
+
+        $SlettKategori = Kategori::find($id);
+        $SlettKategori->delete();
+
+        if($SlettKategori == true) {
+
+            return  redirect('/kategori/create')->withSuccessMessage('Sletting av kategori ' . $SlettKategori->titel . ' Gjennomført');
+
+        } else {
+        
+            return  redirect('/kategori/create')->withSuccessMessage('Noe har gått galt under Sletting');
+
+        }
+
+    }
+
 
 }

@@ -62,6 +62,8 @@ class ProfileController extends Controller
 
             ]);
 
+            $ObjektTable = new Objekt();
+
            
 
         //dd($request->input('kategori'), $request->input('title'), $request->input('bruker_id'));
@@ -75,7 +77,7 @@ class ProfileController extends Controller
        Felt::find($imageID)->update(['image' => $filename]);
 
 
-       }
+       } 
 
         if($LagreObjekt == true) {
 

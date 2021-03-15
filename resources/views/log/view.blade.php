@@ -10,6 +10,7 @@
             </div>
             <div class="card-body">
                 <p class="card-text">
+                    <button type="button" class="btn btn-primary">Print</button>
                     Using the most basic table Leanne Grahamup, here’s how <code>.table</code>-based tables look in Bootstrap. You
                     can use any example of below table for your table and it can be use with any type of bootstrap tables.
                 </p>

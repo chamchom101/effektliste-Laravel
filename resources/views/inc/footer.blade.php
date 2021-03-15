@@ -45,8 +45,8 @@
     <script src="{{asset ('app-assets/js/scripts/forms/form-number-input.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/jquery/jquery-ui.js')}}"></script>
 
-    {{-- <script src="{{asset ('app-assets/vendors/js/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset ('app-assets/vendors/js/jquery/jquery-3.6.0.min.js')}}"></script> --}}
+    <script src="{{asset ('app-assets/vendors/js/jquery/jquery.min.js')}}"></script>
+    {{-- <script src="{{asset ('app-assets/vendors/js/jquery/jquery-3.6.0.min.js')}}"></script> --}}
 
 
     <!-- END: Page Vendor JS-->
@@ -60,6 +60,10 @@
     <!-- BEGIN: Page JS-->
     <script src="{{asset ('app-assets/js/scripts/pages/dashboard-ecommerce.min.js')}}"></script>
     <script src="{{asset ('app-assets/DataTables/datatables.min.js')}}"></script>
+    <script src="{{asset ('app-assets/DataTables/datatables.min.js')}}"></script>
+    <script src="{{asset ('app-assets/DataTables/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset ('app-assets/DataTables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset ('app-assets/js/lightbox.js')}}"></script>
     <!-- END: Page JS-->
     
     @include('sweetalert::alert')
@@ -75,6 +79,7 @@
 
 $(document).ready(function() {
     $('#example').DataTable( {
+      
     buttons: [
         {
             extend: 'print',

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\BrukerController;
+use App\Http\Controllers\ObjektController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DokumentController;
 use App\Http\Controllers\KategoriController;
@@ -35,8 +36,18 @@ Route::get('kategori/create', [CreateKategoriController::class, 'index'])->name(
 Route::post('kategori', [CreateKategoriController::class, 'store']);
 Route::get('kategori/{id}/edit', [CreateKategoriController::class, 'edit'])->name('kategori.edit');
 Route::put('kategori/{id}', [CreateKategoriController::class, 'update']);
+Route::get('kategori/{id}', [CreateKategoriController::class, 'destroy'])->name('kategori.destroy');
 
-/* Registrering av nye brukere */
+
+/* Objekter Vise->lage->Redigere->slette */
+Route::get('objekt', [ObjektController::class, 'index'])->name('objekt.view');
+Route::post('objekt', [ObjektController::class, 'store']);
+Route::get('objekt/{id}/edit', [ObjektController::class, 'edit'])->name('objekt.edit');
+Route::put('objekt/{id}', [ObjektController::class, 'update']);
+Route::get('objekt/{id}', [ObjektController::class, 'destroy'])->name('objekt.destroy');
+
+
+/* Registrering/Sletting av nye brukere */
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
 Route::get('register/{id}', [RegisterController::class, 'destroy'])->name('register.destroy');

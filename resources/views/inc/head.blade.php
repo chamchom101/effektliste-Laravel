@@ -48,6 +48,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/DataTables/datatables.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/jquery.dataTables.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/buttons.dataTables.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/lightbox.css')}}">
     <!-- END: Page CSS-->
 
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/style.css')}}">
