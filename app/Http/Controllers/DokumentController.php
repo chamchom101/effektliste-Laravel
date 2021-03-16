@@ -23,7 +23,8 @@ class DokumentController extends Controller
     public function print ($id) {
 
         $Bruker = Bruker::find($id);
+        $getBrukers = Bruker::where('id', $id)->get();
 
-        return view('dokument.print', compact('Bruker'));
+        return view('dokument.print', compact('Bruker', 'getBrukers'));
     }
 }

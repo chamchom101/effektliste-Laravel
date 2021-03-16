@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Objekt extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+
+        'name',
+        'max_rom',
+        'betjent'
+    ];
 }

@@ -13,4 +13,83 @@ class ObjektController extends Controller
 
         return view('objekt.view', compact('Objekter'));
      }
+
+     public function store (Request $request) {
+
+      $this->validate($request, [
+
+         'objekt' => 'required',
+         'betjent' => 'required',
+         'max'     => 'required'
+
+      ]);
+
+      $createObjekt = Objekt::Create([
+
+         'name' => $request->objekt,
+         'max_rom' => $request->max,
+         'betjent' => $request->betjent
+
+      
+      ]);
+
+      if ($createObjekt == true) {
+
+         return back()->withSuccessMessage('Nytt Objektlagret uten feil');
+
+      } else {
+
+         return back()->withSuccessMessage('Noe har gått feil under oppretting av et nytt objekt');
+      }
+
+
+     }
+
+     public function edit ($id) {
+
+      $editObjekter = Objekt::find($id);
+      $Objekter = Objekt::get();
+
+      return view('objekt.view', compact('editObjekter', 'Objekter'));
+
+
+     }
+
+     public function update (Request $request, $id) {
+
+      $updateObjekt = Objekt::find($id);
+      $updateObjekt->name = $request->input('objekt');
+      $updateObjekt->max_rom = $request->input('max');
+      $updateObjekt->betjent = $request->input('betjent');
+      $updateObjekt->save();
+
+      if($updateObjekt == true) {
+
+         return  redirect('/objekt')->withSuccessMessage('Redigering av objekt ' . $updateObjekt->name . ' Gjennomført');
+      } else {
+
+         return  redirect('/objekt')->withSuccessMessage('Redigering av kategori ' . $updateObjekt->name . ' Ikke gjennomført');
+      }
+
+
+     }
+
+
+     public function destroy ($id){
+
+      $SlettObjekt = Objekt::find($id);
+      $SlettObjekt->delete();
+
+      if($SlettObjekt == true) {
+
+         return  redirect('/objekt')->withSuccessMessage('Sletting av objekt ' . $SlettObjekt->name . ' Gjennomført');
+      } 
+      else {
+
+         return  redirect('/objekt')->withSuccessMessage('Sletting av objekt ' . $SlettObjekt->name . ' Ikke gjennomført');
+
+      }
+
+      
+     }
 }

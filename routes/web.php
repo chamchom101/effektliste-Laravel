@@ -28,7 +28,7 @@ Route::get('/', [BrukerController::class, 'index'])->name('welcome');
 
 //Route::get('profile/{id}', [BrukerController::class, 'profile'])->name('profile');
 
-/* Kategori (Blir ikke brukt) */
+/* Kategori->name (Blir ikke brukt) */
 Route::get('kategori', [KategoriController::class, 'index'])->name('kategori');
 Route::post('kategori', [KategoriController::class, 'hent']);
 

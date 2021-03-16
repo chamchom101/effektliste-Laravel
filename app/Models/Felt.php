@@ -19,6 +19,7 @@ class Felt extends Model
     public function tapActivity(Activity $activity, string $eventName)
     {
         $activity->causer_id = Felt::all()->last()->bruker_id;
+        $activity->description = "{$eventName}";
     }
 
     

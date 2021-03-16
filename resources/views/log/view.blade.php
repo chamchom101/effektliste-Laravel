@@ -19,6 +19,7 @@
                 <table id="example" class="display" >
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>Objekt fra</th>
                             <th>Objekt til</th>
                             <th>Rom fra</th>
@@ -35,6 +36,8 @@
                             
                        
                         <tr>
+
+                            <td>{{$logg->description}}</td>
                             <td>
                                 <img src="../../../app-assets/images/icons/rarrow.png" class="mr-75" height="20" width="20" alt="Angular">
                                 {{$logg->properties['old']['title'] ?? ''}}</td>
@@ -44,9 +47,14 @@
                             <td>
                                 <img src="../../../app-assets/images/icons/rarrow.png" class="mr-75" height="20" width="20" alt="Angular">
                                 {{$logg->properties['old']['antall_rom'] ?? ''}}</td>
+
+                             
+                            
                             <td>
                                 <img src="../../../app-assets/images/icons/garrow.png" class="mr-75" height="20" width="20" alt="Angular">
                                 {{$logg->properties['attributes']['antall_rom'] ?? ''}}</td>
+                              
+
                             <td>
                                 <img src="../../../app-assets/images/icons/rarrow.png" class="mr-75" height="20" width="20" alt="Angular">
                                 {{$logg->properties['old']['antall_lager'] ?? ''}}</td>
@@ -62,6 +70,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
+                            <th>Action</th>
                             <th>Objekt fra</th>
                             <th>Objekt til</th>
                             <th>Rom fra</th>
