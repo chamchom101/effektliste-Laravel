@@ -61,8 +61,10 @@ Route::put('/profile/{id}', [ProfileController::class, 'update']);
 Route::get('profile/delete/{id}', [ProfileController::class, 'destroy']);
 
 
-
+Route::get('dokument/view', [DokumentController::class, 'view'])->name('dokument.view');
 Route::get('dokument/{id}', [DokumentController::class, 'index'])->name('dokument.preview');
 Route::get('dokument/print/{id}', [DokumentController::class, 'print'])->name('dokument.print');
+Route::post('dokument/print/bruker/{id}', [DokumentController::class, 'printValue'])->name('dokument.printvalue');
+
 
 Route::get('/log/{id}', [LogController::class, 'index'])->name('log.view');

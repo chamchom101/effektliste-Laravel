@@ -9,7 +9,7 @@
             <div class="d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0">
                 <div>
                     <div class="logo-wrapper">
-                        <img src="../../../app-assets/images/logo/cover.png" style="width: 100px; height: 60px" alt="" />
+                        <img src="../../../app-assets/images/logo/default.png" style="width: 100px; height: 80px" alt="" />
                         <h3 class="text-primary invoice-logo">Effektliste</h3>
                     </div>
                     <p class="card-text mb-25">Navn: {{$Bruker->navn}}</p>

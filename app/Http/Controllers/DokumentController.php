@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Felt;
 use App\Models\Bruker;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Spatie\Activitylog\Models\Activity;
 
 class DokumentController extends Controller
 {
@@ -16,6 +18,28 @@ class DokumentController extends Controller
         $getBrukers = Bruker::where('id', $id)->get();
 
         return view('dokument.preview', compact('Bruker', 'getBrukers'));
+
+
+    }
+
+    public function view () {
+
+        $ShowBrukers = Bruker::get();
+
+        return view('dokument.view', compact('ShowBrukers'));
+    }
+
+    public function printValue (Request $request, $id) {
+        $rom = $request->input('rom');
+        $getBruker = Bruker::find($id);
+        //$printValues = Felt::where('bruker_id', $id)->latest()->take($rom)->get();
+        //$date = \Carbon\Carbon::today()->subDays(30);
+        $printValues = Felt::where('bruker_id', $id)->latest('updated_at')->take($rom)->get();
+        $loggView = Activity::where('causer_id', $id)->get();
+        
+       // dd($test, $rom);
+
+       return view('dokument.printvalue', compact('printValues', 'getBruker'));
 
 
     }

@@ -23,14 +23,14 @@
                               <p class="mb-0">Ravneberget 30 17?? </p>
                           </div>
                           <div class="mt-md-0 mt-2">
-                              <h4 class="font-weight-bold text-right mb-1">INNSATT NUMMER# {{$Bruker->innsatt_nummer}}</h4>
+                              <h4 class="font-weight-bold text-right mb-1">INNSATT NUMMER# {{$getBruker->innsatt_nummer}}</h4>
                               <div class="invoice-date-wrapper mb-50">
                                   <span class="invoice-date-title">Opprettet:</span>
-                                  <span class="font-weight-bold"> {{$Bruker->created_at->format('d/m/Y')}}</span>
+                                  <span class="font-weight-bold"> {{ date('d-m-Y')}}</span>
                               </div>
                               <div class="invoice-date-wrapper">
-                                  <span class="invoice-date-title">Redigert:</span>
-                                  <span class="font-weight-bold">{{$Bruker->updated_at->format('d/m/Y')}}</span>
+                                  <span class="invoice-date-title">Klokken:</span>
+                                  <span class="font-weight-bold">{{date('H:i')}}</span>
                               </div>
                           </div>
                       </div>
@@ -40,37 +40,14 @@
                       <div class="row pb-2">
                           <div class="col-sm-6">
                               <h6 class="mb-1">Tilhørende til:</h6>
-                              <p class="mb-25">Navn: <strong>{{$Bruker->navn}}</strong></p>
-                              <p class="mb-25">Hylle: <strong>{{$Bruker->hylle}}</strong></p>
-                              <p class="mb-25">Dato: <strong>{{$Bruker->created_at->format('d/m/Y')}}</strong></p>
+                              <p class="mb-25">Navn: <strong>{{$getBruker->navn}}</strong></p>
+                              <p class="mb-25">Hylle: <strong>{{$getBruker->hylle}}</strong></p>
+                              <p class="mb-25">Dato: <strong>{{date('d-m-Y')}}</strong></p>
                               <p class="mb-25">Betjent:______________________</p>
                               <p class="mb-25">Signatur:_____________________</p>
                             
                           </div>
-                          <div class="col-sm-6 mt-sm-0 mt-2">
-                              <h6 class="mb-1">Ved løslatelse:</h6>
-                              <table>
-                                  <tbody>
-                                      <tr>
-                                          <td class="pr-1">Navn:</td>
-                                          <td><strong>{{$Bruker->navn}}</strong></td>
-                                      </tr>
-                                      <tr>
-                                          <td class="pr-1">Effekter levert:</td>
-                                          <td>____________________</td>
-                                      </tr>
-                                      <tr>
-                                          <td class="pr-1">Dato:</td>
-                                          <td>____________________</td>
-                                      </tr>
-                                      <tr>
-                                          <td class="pr-1">Betjent:</td>
-                                          <td>____________________</td>
-                                      </tr>
-                                    
-                                  </tbody>
-                              </table>
-                          </div>
+                          NOTE
                       </div>
   
                       <div class="table-responsive mt-2">
@@ -81,31 +58,35 @@
                                     <th class="py-1">På rom</th>
                                     <th class="py-1">På lager</th>
                                     <th class="py-1">Kategori</th>
+                                    <th class="py-1">Redigert</th>
                                   </tr>
                               </thead>
-                              @foreach ($getBrukers as $getBruker )
-                              @foreach ($getBruker->felt->sortBy('kategori_id') as $felt )
+                             @foreach ($printValues->sortByDesc('updated_at') as $print)
+                                
+                                     
+                                 
+                             
                               <tbody>
                                   <tr>
                                       <td class="py-1 pl-4">
-                                          <p class="font-weight-semibold mb-25">{{$felt->title}}</p>
+                                          <p class="font-weight-semibold mb-25">{{$print->title}}</p>
                                           <p class="text-muted text-nowrap">
-                                            {{$felt->info}}
+                                            {{$print->info}}
                                           </p>
                                       </td>
                                       <td class="py-1">
-                                          <strong>{{$felt->antall_rom}}</strong>
+                                          <strong>{{$print->antall_rom}}</strong>
                                       </td>
                                       <td class="py-1">
-                                          <strong>{{$felt->antall_lager}}</strong>
+                                          <strong>{{$print->antall_lager}}</strong>
                                       </td>
                                       <td class="py-1">
-                                          <strong>{{$felt->kategori->titel ?? ''}}</strong>
+                                          <strong>{{$print->kategori->titel}}</strong>
                                       </td>
+                                      <td><strong>{{$print->updated_at->format('d/m/Y')}}</strong></td>
                                   </tr>
-                                  
                                   @endforeach
-                             @endforeach
+                                  
                               </tbody>
                           </table>
                       </div>
@@ -113,7 +94,7 @@
                       <div class="row invoice-sales-total-wrapper mt-3">
                           <div class="col-md-6 order-md-1 order-2 mt-md-0 mt-3">
                               <p class="card-text mb-0">
-                                  <span class="font-weight-bold">Opprettet av:</span> <span class="ml-75">{{$Bruker->betjent_navn}}</span>
+                                  <span class="font-weight-bold">Opprettet av:</span> {{$getBruker->betjent_navn}}<span class="ml-75"></span>
                               </p>
                           </div>
                          
