@@ -2,88 +2,90 @@
 
 @section('content')
 
-<div class="row" id="basic-table">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Table Basic</h4>
-            </div>
-            <div class="card-body">
-                <p class="card-text">
-                    <button type="button" class="btn btn-primary">Print</button>
-                    Using the most basic table Leanne Grahamup, here’s how <code>.table</code>-based tables look in Bootstrap. You
-                    can use any example of below table for your table and it can be use with any type of bootstrap tables.
-                </p>
-            </div>
-            <div class="table-responsive">
-                <table id="example" class="display" >
-                    <thead>
-                        <tr>
-                            <th>Action</th>
-                            <th>Objekt fra</th>
-                            <th>Objekt til</th>
-                            <th>Rom fra</th>
-                            <th>Rom til</th>
-                            <th>Lager fra</th>
-                            <th>Lager til</th>
-                            <th>Dato</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    
-                        @foreach ($loggView as $logg )
+<section class="basic-timeline">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Logg</h4>
+                                </div>
+                                <div class="card-body">
+                                    
+                                    @foreach ($loggView as $logg )
+                                    @if($logg->description == 'created')
+                                    <ul class="timeline">
+                                        <li class="timeline-item">
+                                            <span class="timeline-point timeline-point-indicator"></span>
+                                            <div class="timeline-event">
+                                                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
+                                                    <div class="badge badge-primary">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star mr-25"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                                        <span>Opprettet</span>
+                                                    </div>
+                                                    
+                                                    <span class="timeline-event-time">12 min ago</span>
+                                                </div>
+                                                <p>{{$logg->created_at->format('d-m-Y')}}: Objekt  <strong>{{ $logg->properties['attributes']['title'] ?? ''}}</strong> Opprettet av (NAVN)</p>
+                                                <p>sssss</p>
+                                                
+                                            </div>
+                                        </li>
                             
+                                    </ul>
+                                    @elseif($logg->description == 'updated')
+                                    <ul class="timeline">
+                                        <li class="timeline-item">
+                                            <span class="timeline-point timeline-point-indicator"></span>
+                                            <div class="timeline-event">
+                                                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
+                                                    <div class="badge badge-success">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star mr-25"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                                        <span>Redigert</span>
+                                                    </div>
+                                                    
+                                                    <span class="timeline-event-time">12 min ago</span>
+                                                </div>
+                                                <p><strong>{{$logg->created_at->format('d-m-Y')}}:</strong> Objekt endret fra <strong>{{ $logg->properties['old']['title'] ?? 'Ingen endring'}}</strong> til <strong>{{$logg->properties['attributes']['title'] ?? 'Ingen endring'}}</strong> </p>
+                                                <p>Antall på rommet endret fra <strong>{{$logg->properties['old']['antall_rom'] ?? 'Ingen endring'}}</strong> til <strong>{{$logg->properties['attributes']['antall_rom'] ?? 'Ingen endring'}}</strong> </p>
+                                                <p>Antall på lageret endret fra <strong>{{$logg->properties['old']['antall_lager'] ?? 'Ingen endring'}}</strong> til <strong>{{$logg->properties['attributes']['antall_lager'] ?? 'Ingen endring'}}</strong></p>
+                                                <p>Notat endret fra <strong>{{$logg->properties['old']['info'] ?? 'Ingen endring'}}</strong> til <strong>{{$logg->properties['attributes']['info'] ?? 'Ingen endring'}}</strong></p>
+                                                <p>Ingen data</p>
+                                                
+                                                
+                                            </div>
+                                        </li>
+                            
+                                    </ul>
+                                    @elseif($logg->description == 'deleted')
+
+                                    <ul class="timeline">
+                                        <li class="timeline-item">
+                                            <span class="timeline-point timeline-point-indicator"></span>
+                                            <div class="timeline-event">
+                                                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
+                                                    <div class="badge badge-danger">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star mr-25"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                                        <span>Slettet</span>
+                                                    </div>
+                                                    
+                                                    <span class="timeline-event-time">12 min ago</span>
+                                                </div>
+                                                <p>{{$logg->created_at->format('d-m-Y')}}: Objekt <strong>{{ $logg->properties['attributes']['title'] ?? ''}}</strong> slettet av (NAVN)</p>
+                                                <p>sssss</p>
+                                                
+                                            </div>
+                                        </li>
+                            
+                                    </ul>
+
+                                    @endif
+                                    @endforeach
+                                
+                                </div>
+                            </div>
+                        </div>
                        
-                        <tr>
-
-                            <td>{{$logg->description}}</td>
-                            <td>
-                                <img src="../../../app-assets/images/icons/rarrow.png" class="mr-75" height="20" width="20" alt="Angular">
-                                {{$logg->properties['old']['title'] ?? ''}}</td>
-                            <td>
-                                <img src="../../../app-assets/images/icons/garrow.png" class="mr-75" height="20" width="20" alt="Angular">
-                                {{$logg->properties['attributes']['title'] ?? ''}}</td>
-                            <td>
-                                <img src="../../../app-assets/images/icons/rarrow.png" class="mr-75" height="20" width="20" alt="Angular">
-                                {{$logg->properties['old']['antall_rom'] ?? ''}}</td>
-
-                             
-                            
-                            <td>
-                                <img src="../../../app-assets/images/icons/garrow.png" class="mr-75" height="20" width="20" alt="Angular">
-                                {{$logg->properties['attributes']['antall_rom'] ?? ''}}</td>
-                              
-
-                            <td>
-                                <img src="../../../app-assets/images/icons/rarrow.png" class="mr-75" height="20" width="20" alt="Angular">
-                                {{$logg->properties['old']['antall_lager'] ?? ''}}</td>
-                            </td>
-                            <td>
-                                <img src="../../../app-assets/images/icons/garrow.png" class="mr-75" height="20" width="20" alt="Angular">
-                                {{$logg->properties['attributes']['antall_lager'] ?? ''}}</td>
-                            </td>
-                            <td>{{$logg->created_at}}</td>
-                        </tr>
-                        @endforeach
-                      
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Action</th>
-                            <th>Objekt fra</th>
-                            <th>Objekt til</th>
-                            <th>Rom fra</th>
-                            <th>Rom til</th>
-                            <th>Lager fra</th>
-                            <th>Lager til</th>
-                            <th>Dato</th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
+                    </div>
+                </section>
 
 @endsection

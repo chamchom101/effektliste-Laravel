@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Bruker;
+use App\Models\Objekt;
 use App\Models\Kategori;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Models\Activity;
@@ -72,6 +73,11 @@ class Felt extends Model
     public function felt () {
 
         return $this->hasMany(kategori::class);
+    }
+
+    public function feltObjekt () {
+
+        return $this->belongsTo(Objekt::class);
     }
 
   

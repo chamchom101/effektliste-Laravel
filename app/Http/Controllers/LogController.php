@@ -10,12 +10,10 @@ class LogController extends Controller
 {
     public function index ($id) {
 
-       
-
+    
         $loggView = Activity::where('causer_id', $id)->get();
-
-        
-        
+        $getView = Activity::find($id);
+ 
 
         return view('log.view', compact('loggView'));
 

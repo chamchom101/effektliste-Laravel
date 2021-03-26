@@ -107,15 +107,23 @@
                     <h4 class="card-title">Oversikt over effektene</h4>
                 </div>
                 @if (session('status'))
-                <div class="row">
-               <div class="alert alert-success" id="type-success" role="alert">
-                  <h4 class="alert-heading">Godkjent</h4>
-                  <div class="alert-body">
-                      {{ session('status') }}
-                  </div>
-              </div>
-          </div>
-              @endif
+
+                <div class="alert alert-danger mr-2" id="type-danger" role="alert">
+                   <h4 class="alert-heading">Ikke Godkjent</h4>
+                   <div class="alert-body">
+                       {!!session('status')!!}
+                   </div>
+               </div>
+               @endif
+               @if (session('st'))
+
+                <div class="alert alert-danger mr-2" id="type-danger" role="alert">
+                   <h4 class="alert-heading">Ikke Godkjent</h4>
+                   <div class="alert-body">
+                       {!!session('st')!!}
+                   </div>
+               </div>
+               @endif
                 <div class="card-datatable">
                     <table id="example" class="display" style="width:100%">
                         <thead>
@@ -132,12 +140,15 @@
                         <tbody>
                             @foreach ($tests as $test)
                             @foreach ($test->felt->sortBy('kategori_id') as $felt )
+                                  
+
                             <tr>
                                 <td>
                                     
                                     <img src="../../../app-assets/images/icons/star.svg" class="mr-75" height="20" width="20" alt="Angular">
                     <span class="font-weight-bold">{{$felt->title}}</span>
                                 </td>
+                                
                                 <td>{{$felt->antall_rom}}</td>
                                 <td>{{$felt->antall_lager}}</td>
                                 <td>{{$felt->kategori->titel ?? ''}}</td>
@@ -179,6 +190,7 @@
                             </tr>
                             @endforeach
                             @endforeach
+                           
                             
                         </tfoot>
                     </table>

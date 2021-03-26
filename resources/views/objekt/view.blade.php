@@ -5,6 +5,15 @@
 <div class="col-lg-8 col-12">
     <div class="card card-company-table">
         <div class="card-body p-0">
+            @if (session('status2'))
+
+                <div class="alert alert-danger mr-2" id="type-danger" role="alert">
+                   <h4 class="alert-heading">Ikke Godkjent</h4>
+                   <div class="alert-body">
+                       {!!session('status2')!!}
+                   </div>
+               </div>
+               @endif
             <div class="table-responsive">
                 <table class="table">
                     <thead>

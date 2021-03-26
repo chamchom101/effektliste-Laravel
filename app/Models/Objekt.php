@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Felt;
+use App\Models\Bruker;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Objekt extends Model
 {
@@ -15,4 +17,10 @@ class Objekt extends Model
         'max_rom',
         'betjent'
     ];
+
+
+    public function felt () {
+
+        return $this->hasMany(Felt::class);
+    }
 }

@@ -32,11 +32,9 @@ class ProfileController extends Controller
        $tests = Bruker::with('felt')->where('id', $id)->get();
        //$tests = Felt::with('bruker')->where('id', $id)->paginate(5);
        $objekters = Objekt::get();
-       
+       $obj = Objekt::get();
 
-     
-
-        return view('bruker.profile', compact('profiles', 'brukers', 'kategoris', 'tests', 'objekters'));
+        return view('bruker.profile', compact('profiles', 'brukers', 'kategoris', 'tests', 'objekters', 'obj'));
 
     
     }
@@ -50,21 +48,52 @@ class ProfileController extends Controller
 
         ]);
 
-        $LagreObjekt = Felt::Create([
+        
 
-            'title' => $request->title,
-            'kategori_id' => $request->kategori,
-            'bruker_id'    => $request->bruker_id,
-            'info'  => $request->info,
-            'antall_rom'   => $request->rom,
-            'antall_lager' => $request->lager,
-            //'image' => $request->image->move('public/images/', $imageName)
+        
+            $msg = 'Det er ikke tillatt å bruke objekter som ikke er registret., <a href="'. url('/objekt') . '"> Klikk her  </a>  og opprett ønsket objekt </br> Mulig dada';
+            $msg2 = 'Større enn nødvedig';
+            $ff = Objekt::where('name', $request->input('title'))->exists();
+            $tt = Objekt::where('max_rom', '<=',  $request->input('rom'))->get()->first();
+            $new = DB::table('objekts')->select('max_rom')->where('max_rom', '<=', $request->input('rom'))->get()->first();
+            //$new = DB::table('objekts')->select('max_rom')->get()->first();
+            // Først skjekk om objektet eksisterer i databasen.
+            // Dersom den eksisterer la brukeren gjennomføre.
+            // Eksisterer ikke objektet i Objekter tabelen, stopp lagring, og gi en feilmelding.
 
-            ]);
 
-            $ObjektTable = new Objekt();
+            if(!$ff) {
+
+                return back()->with('status', $msg);
+                
+                
+                } else {
+                
+                $LagreObjekt = Felt::Create([
+                
+                    'title' => $request->title,
+                    'kategori_id' => $request->kategori,
+                    'bruker_id'    => $request->bruker_id,
+                    'info'  => $request->info,
+                    'antall_rom'   => $request->rom,
+                    'antall_lager' => $request->lager,
+                    //'image' => $request->image->move('public/images/', $imageName)
+                
+                    ]);
+                
+                
+                
+                
+                } 
+
 
            
+            
+            
+           
+       
+                
+
 
         //dd($request->input('kategori'), $request->input('title'), $request->input('bruker_id'));
         //$imageName = time(). '.' .$request->image->extensions();

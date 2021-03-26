@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Felt;
+use App\Models\Objekt;
 use App\Models\Profile;
 use App\Models\Kategori;
 use Illuminate\Database\Eloquent\Model;
@@ -45,4 +46,6 @@ class Bruker extends Model
 
       return $this->hasManyThrough(Felt::class, kategori::class);
   }
+
+
 }

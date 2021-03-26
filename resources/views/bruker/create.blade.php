@@ -1,7 +1,8 @@
 <section id="input-mask-wrapper">
     <form action="{{route('profile', $profiles->id)}}" enctype="multipart/form-data" method="post">
         @csrf
-    <div class="row collapse" id="HentData">
+    <div class="row collapse" id="HentData" >
+      
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -18,7 +19,7 @@
                                 @foreach ($objekters as $objekt )
                                     
                                 
-                                <option value="{{$objekt->name}}">
+                                <option value="{{$objekt->name}}"></option>
 
                                     @endforeach
                                 
@@ -47,9 +48,13 @@
                             </select>
                         </div>
                         <input type="hidden" value="{{$profiles->id}}" name="bruker_id"> 
+                        
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                             <label for="rom">Antall på rom</label>
                             <div class="input-group input-group-lg bootstrap-touchspin">
+                                @foreach ($obj as $objekter)
+                                <input type="hidden" name="objekt_id" value="{{$objekter->id}}">
+                                @endforeach
                                 <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected"></span><input type="number" class="touchspin form-control" name="rom" value="0"><span class="input-group-btn input-group-append bootstrap-touchspin-injected"></span>
                             </div>
                         </div>

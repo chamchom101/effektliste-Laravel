@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Felt;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\BrukerController;
@@ -68,3 +69,14 @@ Route::post('dokument/print/bruker/{id}', [DokumentController::class, 'printValu
 
 
 Route::get('/log/{id}', [LogController::class, 'index'])->name('log.view');
+
+
+
+Route::get('test', function(){
+
+    $one = Felt::find(37);
+    $two = $one->antall_rom - 3;
+
+    dd($two);
+
+});

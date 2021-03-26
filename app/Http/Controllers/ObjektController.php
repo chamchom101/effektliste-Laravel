@@ -24,14 +24,28 @@ class ObjektController extends Controller
 
       ]);
 
-      $createObjekt = Objekt::Create([
+      $Skjekk = Objekt::where('name', $request->input('objekt'))->exists();
+      $msg = 'Objekt ' . $request->input('objekt') . ' eksistere fra før, bruk et annet navn';
 
-         'name' => $request->objekt,
-         'max_rom' => $request->max,
-         'betjent' => $request->betjent
+
+       if($Skjekk) {
+
+         return back()->with('status2', $msg);
+
+
+       } else {
+
+         $createObjekt = Objekt::Create([
+
+            'name' => $request->objekt,
+            'max_rom' => $request->max,
+            'betjent' => $request->betjent
+   
+         
+         ]);
+       }
 
       
-      ]);
 
       if ($createObjekt == true) {
 
