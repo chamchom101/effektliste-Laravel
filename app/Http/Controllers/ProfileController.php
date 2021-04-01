@@ -18,6 +18,9 @@ class ProfileController extends Controller
 {
     public function index ($id) {
 
+       
+     $JoinFelt = 
+
 
        $profiles = Bruker::with('felt')->find($id);
        $brukers = Bruker::find($id)->felt;
@@ -39,7 +42,7 @@ class ProfileController extends Controller
     
     }
 
-    public function store (Request $request) {
+    public function store (Request $request, $id) {
 
         $this->validate($request, [
 
@@ -55,11 +58,23 @@ class ProfileController extends Controller
             $msg2 = 'Større enn nødvedig';
             $ff = Objekt::where('name', $request->input('title'))->exists();
             $tt = Objekt::where('max_rom', '<=',  $request->input('rom'))->get()->first();
-            $new = DB::table('objekts')->select('max_rom')->where('max_rom', '<=', $request->input('rom'))->get()->first();
-            //$new = DB::table('objekts')->select('max_rom')->get()->first();
+            //$new = DB::table('objekts')->select('max_rom')->where('max_rom', '<=', $request->input('rom'))->get()->first();
+            $new = DB::table('objekts')->where([
+                ['name', '=', $request->input('title')],
+                ['max_rom', ">=", $request->input('rom')],
+            ])->get()
+            ->first();
             // Først skjekk om objektet eksisterer i databasen.
             // Dersom den eksisterer la brukeren gjennomføre.
             // Eksisterer ikke objektet i Objekter tabelen, stopp lagring, og gi en feilmelding.
+
+            // if(!$new) {
+
+            //     dd($new, $request->input('rom'));
+            // } else {
+
+            //     dd($new, $request->input('rom'));
+            // }
 
 
             if(!$ff) {
@@ -85,6 +100,7 @@ class ProfileController extends Controller
                 
                 
                 } 
+           
 
 
            
