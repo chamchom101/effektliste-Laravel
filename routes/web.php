@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DokumentController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\FremstillingController;
 use App\Http\Controllers\CreateKategoriController;
 
 /*
@@ -52,6 +53,9 @@ Route::get('objekt/{id}', [ObjektController::class, 'destroy'])->name('objekt.de
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
 Route::get('register/{id}', [RegisterController::class, 'destroy'])->name('register.destroy');
+
+/* Fremstilling Route */ 
+Route::get('fremstilling', [FremstillingController::class, 'index'])->name('innut');
 
 
 /* Profil routes  */
