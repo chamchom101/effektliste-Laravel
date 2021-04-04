@@ -90,11 +90,38 @@ class FremstillingController extends Controller
 
         //$FindValueFromFelt = Felt::
 
+        $FeltID = $request->input('felt_id');
+        $FreID = $request->input('frem_id');
+        $FinnBruker = $request->input('bruker_id');
         $FinnFeltID = Fremstilling::where('id',$id)->find($id);
-        $OppdaterFelt = Felt::where('id', $FinnFeltID->felt_id)->find($FinnFeltID);
+        $OppdaterID = Felt::find($FeltID);
+        $OppdaterID->antall_rom = $request->input('rom') + $OppdaterID->antall_rom;
+        $OppdaterID->antall_lager = $request->input('lager') + $OppdaterID->antall_lager;
+        $OppdaterID->save();
+
+        $FinnFeltID->delete();
+
+        $Skjekk = Fremstilling::where('bruker_id', $FinnBruker)->exists();
+
+        if(!$Skjekk) {
+
+            $OppdaterBruker = Bruker::find($FinnBruker);
+            $OppdaterBruker->is_active = 0;
+            $OppdaterBruker->save();
+
+        } else {
+
+            dd('Sletter');
+        }
+
+
+        //$FeltOppdatering = Felt::find($id);
+
+
+        //$OppdaterFelt->rom;
         
 
-        dd($OppdaterFelt);
+        dd($FinnFeltID->rom);
         //$FindValueFromFelt = Felt::where()
 
 
