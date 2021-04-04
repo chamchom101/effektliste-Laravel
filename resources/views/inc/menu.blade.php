@@ -23,7 +23,7 @@
         </li>
         <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('objekt.view')}}"><i data-feather="list"></i><span class="menu-title text-truncate" data-i18n="Typography">Objekter</span></a>
         </li>
-        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('objekt.view')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Typography">Ut/In</span></a>
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('innut')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Typography">Ut/In</span></a>
         </li>
         <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('dokument.view')}}"><i data-feather="printer"></i><span class="menu-title text-truncate" data-i18n="Typography">Print</span></a>
         </li>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Felt;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\BrukerController;
@@ -56,6 +57,9 @@ Route::get('register/{id}', [RegisterController::class, 'destroy'])->name('regis
 
 /* Fremstilling Route */ 
 Route::get('fremstilling', [FremstillingController::class, 'index'])->name('innut');
+Route::get('fremstilling/{id}/edit', [FremstillingController::class, 'edit'])->name('innut.edit');
+Route::post('fremstilling/{id}', [FremstillingController::class, 'update']);
+Route::post('fremstilling/{id}/tilbake', [FremstillingController::class, 'tilbake']);
 
 
 /* Profil routes  */
@@ -76,11 +80,12 @@ Route::get('/log/{id}', [LogController::class, 'index'])->name('log.view');
 
 
 
-Route::get('test', function(){
+Route::get('test', function(Request $request){
 
     $one = Felt::find(37);
-    $two = $one->antall_rom - 3;
+    //$two = $one->antall_rom - 3;
+    $tre = $request->flash('Hassan');
 
-    dd($two);
+    dd($tre);
 
 });

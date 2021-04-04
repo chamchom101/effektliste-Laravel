@@ -33,8 +33,14 @@
     <!-- END: Footer-->
 
 
+   
+
+
     <!-- BEGIN: Vendor JS-->
     <script src="{{asset ('app-assets/vendors/js/vendors.min.js')}}"></script>
+
+    
+
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
@@ -44,8 +50,9 @@
     <script src="{{asset ('app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')}}"></script>
     <script src="{{asset ('app-assets/js/scripts/forms/form-number-input.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/jquery/jquery-ui.js')}}"></script>
-
     <script src="{{asset ('app-assets/vendors/js/jquery/jquery.min.js')}}"></script>
+
+    
     {{-- <script src="{{asset ('app-assets/vendors/js/jquery/jquery-3.6.0.min.js')}}"></script> --}}
 
 
@@ -64,6 +71,7 @@
     <script src="{{asset ('app-assets/DataTables/dataTables.buttons.min.js')}}"></script>
     <script src="{{asset ('app-assets/DataTables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset ('app-assets/js/lightbox.js')}}"></script>
+
     <!-- END: Page JS-->
     
     @include('sweetalert::alert')
@@ -74,8 +82,6 @@
           feather.replace({ width: 14, height: 14 });
         }
       })
-
-
 
 $(document).ready(function() {
     $('#example').DataTable( {
@@ -91,7 +97,14 @@ $(document).ready(function() {
 
 } );
 
+
+$("#myModal").modal("show");
+$("#myModal").css("z-index", "1500");
+
     </script>
+
+
   </body>
+
   <!-- END: Body-->
 </html>

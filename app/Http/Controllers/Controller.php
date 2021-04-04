@@ -19,6 +19,12 @@ class Controller extends BaseController
             if(session('success_message')) {
 
                 Alert::success('Godkjent!', session('success_message'));
+
+            } elseif (session('error_message')) {
+
+
+                Alert::error('Feilmelding!', session('error_message'));
+
             }
             return $next($request);
     

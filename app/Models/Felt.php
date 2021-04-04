@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Bruker;
 use App\Models\Objekt;
 use App\Models\Kategori;
+use App\Models\Fremstilling;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Models\Activity;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -79,6 +80,12 @@ class Felt extends Model
 
         return $this->belongsTo(Objekt::class);
     }
+
+    public function fremstilling () {
+
+        return $this->hasMany(Fremstilling::class);
+    }
+
 
   
 }

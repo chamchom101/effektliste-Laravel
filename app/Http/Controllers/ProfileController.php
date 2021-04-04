@@ -222,4 +222,17 @@ class ProfileController extends Controller
 
 
     }
+
+    public function felt ($id) {
+
+        $profiles = Bruker::with('felt')->find($id);
+        $objekters = Objekt::get();
+        $kategoris = Kategori::get();
+        $obj = Objekt::get();
+        $tests = Bruker::with('felt')->where('id', $id)->get();
+
+        return view('bruker.profile', compact('profiles', 'objekters', 'kategoris', 'obj', 'tests'));
+
+
+    }
 }
