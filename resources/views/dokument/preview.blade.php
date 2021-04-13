@@ -161,8 +161,7 @@
             <div class="row">
                 <div class="col-12">
                     <span class="font-weight-bold">Note:</span>
-                    <span>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance
-                        projects. Thank You!</span>
+                    <span>Info, regler???</span>
                 </div>
             </div>
         </div>
@@ -175,17 +174,10 @@
 <div class="col-xl-3 col-md-4 col-12 invoice-actions mt-md-0 mt-2">
     <div class="card">
         <div class="card-body">
-            <button class="btn btn-primary btn-block mb-75 waves-effect waves-float waves-light" data-toggle="modal" data-target="#send-invoice-sidebar">
-                Send Invoice
-            </button>
-            <button class="btn btn-outline-secondary btn-block btn-download-invoice mb-75 waves-effect">Download</button>
             <a class="btn btn-outline-secondary btn-block mb-75 waves-effect" href="{{route('dokument.print', $Bruker->id)}}" target="_blank">
                 Print
             </a>
-            <a class="btn btn-outline-secondary btn-block mb-75 waves-effect" href="./app-invoice-edit.html"> Edit </a>
-            <button class="btn btn-success btn-block waves-effect waves-float waves-light" data-toggle="modal" data-target="#add-payment-sidebar">
-                Add Payment
-            </button>
+            <a class="btn btn-outline-secondary btn-block mb-75 waves-effect" href="./app-invoice-edit.html"> Rediger </a>
         </div>
     </div>
 </div>

@@ -111,7 +111,7 @@ class FremstillingController extends Controller
 
         } else {
 
-            dd('Sletter');
+            return  redirect('/fremstilling')->withSuccessMessage('Objektet lagret i (InnUt) uten feil');
         }
 
 
@@ -121,7 +121,7 @@ class FremstillingController extends Controller
         //$OppdaterFelt->rom;
         
 
-        dd($FinnFeltID->rom);
+        return  redirect('/fremstilling')->withSuccessMessage('Oppdatert uten feil');
         //$FindValueFromFelt = Felt::where()
 
 

@@ -155,9 +155,23 @@
                                 <td>{{$felt->antall_rom}}</td>
                                 <td>{{$felt->antall_lager}}</td>
                                 <td>{{$felt->kategori->titel ?? ''}}</td>
-                                <td><button type="button" class="btn btn-outline-primary waves-effect" data-toggle="popover" data-placement="top" data-container="body" data-original-title="Popover on top" data-content="{{$felt->info}}">
+                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$felt->id}}">
                                     INFO
                                 </button></td>
+                                <!-- Modal -->
+														<div class="modal fade" id="exampleModal{{$felt->id}}" data-backdrop="false">
+															<div class="modal-dialog">
+																<div class="modal-content">
+																	<div class="modal-header">
+																		<h4>Informasjon</h4>
+																	</div>
+																	<div class="modal-body">{{$felt->info}}</div>
+																	<div class="modal-footer">
+																		<button type="button" class="btn btn-default" data-dismiss="modal">Steng</button>
+																	</div>
+																</div>
+															</div>
+														</div>
                                 <td>
                                     @if($felt->image === null)
                     <img src="{{asset('public/images/unknown.png')}}" class="rounded mr-1" height="30" alt="Googleee Chrome">
