@@ -38,7 +38,8 @@ class Felt extends Model
         'info',
         'kategori_id',
         'image',
-        'causer_id'
+        'causer_id',
+        'tillatt'
     ];
 
     protected static $logAttributes = ['title', 'antall_rom', 'antall_lager', 'info'];

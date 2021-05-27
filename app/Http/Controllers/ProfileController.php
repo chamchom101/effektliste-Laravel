@@ -92,6 +92,7 @@ class ProfileController extends Controller
                     'info'  => $request->info,
                     'antall_rom'   => $request->rom,
                     'antall_lager' => $request->lager,
+                    'tillatt'      => $request->tillatt
                     //'image' => $request->image->move('public/images/', $imageName)
                 
                     ]);

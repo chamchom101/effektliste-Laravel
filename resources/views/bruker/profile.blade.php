@@ -16,8 +16,8 @@
                                     <div class="badge badge-pill badge-light-success mt-1">Aktiv</div>
                                 </div>
                                 <div class="d-flex flex-wrap">
-                                    <a href="./app-user-edit.html" class="btn btn-primary waves-effect waves-float waves-light">Edit</a>
-                                    <button class="btn btn-outline-danger ml-1 waves-effect">Delete</button>
+                                    <a href="./app-user-edit.html" class="btn btn-primary waves-effect waves-float waves-light">Rediger</a>
+                                    <button class="btn btn-outline-danger ml-1 waves-effect">Slett</button>
                                 </div>
                             </div>
                         </div>
@@ -147,9 +147,13 @@
 
                             <tr>
                                 <td>
-                                    
+                                    @if($felt->tillatt == 1)
+                                    <img src="../../../app-assets/images/icons/feil.png" class="mr-75" height="20" width="20" alt="Angular">
+                    <span class="font-weight-bold text-danger">{{$felt->title}}</span>
+                                    @else 
                                     <img src="../../../app-assets/images/icons/star.svg" class="mr-75" height="20" width="20" alt="Angular">
                     <span class="font-weight-bold">{{$felt->title}}</span>
+                                   @endif
                                 </td>
                                 
                                 <td>{{$felt->antall_rom}}</td>

@@ -65,6 +65,14 @@
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                            <label for="lager">Ikke tillatt</label>
+                            <div class="custom-control custom-control-danger custom-checkbox">
+                                <input type="checkbox" name="tillatt" class="custom-control-input" value="1" id="colorCheck5">
+                                <label class="custom-control-label" for="colorCheck5">Skal Ikke på rom</label>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                             <label for="image">Last opp bildet</label>
                             <input type="file" class="form-control-file" value="test" name="image" id="exampleFormControlFile1">
                         </div>
