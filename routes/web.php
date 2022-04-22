@@ -53,6 +53,8 @@ Route::get('objekt/{id}', [ObjektController::class, 'destroy'])->name('objekt.de
 /* Registrering/Sletting av nye brukere */
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
+Route::get('register/{id}/edit', [RegisterController::class, 'edit'])->name('register.edit');
+Route::put('register/{id}', [RegisterController::class, 'update']);
 Route::get('register/{id}', [RegisterController::class, 'destroy'])->name('register.destroy');
 
 /* Fremstilling Route */ 

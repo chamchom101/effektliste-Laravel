@@ -7,21 +7,57 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-between border-container-lg">
+   
+
                     <div class="user-avatar-section">
-                        <div class="d-flex justify-content-start">
-                            <img class="img-fluid rounded" src="../../../app-assets/images/avatars/7.png" height="104" width="104" alt="User avatar">
+                        <div class="d-flex justify-content-start"> 
+                        @if($profiles->image === null)
+                    
+                    <img class="img-fluid rounded" src="{{asset('public/images/unknown.png')}}" height="104" width="104" alt="User avatar">
+                    @else
+                            <img class="img-fluid rounded" src="{{asset('/storage/images/' . $profiles->image)}}" height="104" width="104" alt="User avatar">
+                            @endif
                             <div class="d-flex flex-column ml-1">
                                 <div class="user-info mb-1">
                                     <h4 class="mb-0">{{$profiles->navn}}</h4>
                                     <div class="badge badge-pill badge-light-success mt-1">Aktiv</div>
                                 </div>
                                 <div class="d-flex flex-wrap">
-                                    <a href="./app-user-edit.html" class="btn btn-primary waves-effect waves-float waves-light">Rediger</a>
-                                    <button class="btn btn-outline-danger ml-1 waves-effect">Slett</button>
+                                    <a href="/register/{{$profiles->id}}/edit" class="btn btn-primary waves-effect waves-float waves-light">Rediger</a>
+                                    <button class="btn btn-outline-danger ml-1 waves-effect" data-toggle="modal" data-target="#exampleModal{{$profiles->id}}">Slett</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                                                       <!-- Modal -->
+														<div class="modal fade" id="exampleModal{{$profiles->id}}" data-backdrop="false">
+															<div class="modal-dialog">
+																<div class="modal-content">
+																	<div class="modal-header">
+																		<h4>Slett bruker {{$profiles->navn}}</h4>
+																	</div>
+																	<div class="modal-body">
+                                                                    <h5>Er du sikker på at du ønsker å Slette {{$profiles->navn}}</h5>
+                                                                    </div>
+																	<div class="modal-footer">
+																		<button type="button" class="btn btn-default" data-dismiss="modal">Steng</button>
+                                                                        <a href="{{route('register.destroy', $profiles->id)}}" class="btn btn-outline-danger ml-1 waves-effect">Slett</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+                    @if (session('status'))
+
+                <div class="alert alert-danger mr-2" id="type-danger" role="alert">
+                   <h4 class="alert-heading">FEIL!!!!</h4>
+                   <div class="alert-body">
+                       {!!session('status')!!}
+                   </div>
+               </div>
+               @endif
+                    
                     <div class="d-flex align-items-center user-total-numbers pt-2">
                         <div class="d-flex align-items-center mr-2">
                             <div class="color-box bg-light-primary">
@@ -156,7 +192,10 @@
                                    @endif
                                 </td>
                                 
-                                <td>{{$felt->antall_rom}}</td>
+                                <td>
+                                    {{$felt->antall_rom}} / {{$felt->max_rom}}
+                                </td>
+
                                 <td>{{$felt->antall_lager}}</td>
                                 <td>{{$felt->kategori->titel ?? ''}}</td>
                                 <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$felt->id}}">
@@ -213,6 +252,7 @@
                                     </div>
                                 </td>
                             </tr>
+                        
                             @endforeach
                             @endforeach
                            
@@ -222,6 +262,12 @@
                 </div>
             </div>
         </div>
+
+        @foreach ($users as $user)
+        <a>{{$user->id}}</a> HHHHHH
+        @endforeach
+
+        
     
 
 

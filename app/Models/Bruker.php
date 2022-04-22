@@ -16,17 +16,19 @@ class Bruker extends Model
     use HasFactory;
     use LogsActivity;
 
-    // protected $filllabel = [
+     protected $fillable = [
 
-    //   'navn',
-    //   'hylle',
-    //   'rom',
-    //   'innsatt_nummer',
-    //   'betjent_navn'
+       'navn',
+       'hylle',
+       'rom',
+       'innsatt_nummer',
+       'betjent_navn',
+       'image',
+       'is_active'
 
-    // ];
+     ];
 
-    protected $guarded = [];
+    //protected $guarded = [];
 
     public function felt () {
 
