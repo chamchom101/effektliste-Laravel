@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Felt;
+use App\Models\Objekt;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -39,5 +40,10 @@ class Kategori extends Model
         return $this->hasMany(Felt::class);
     }
 
+    
+    public function objekt () { //User
+
+        return $this->hasMany(objekt::class);
+    }
 
 }

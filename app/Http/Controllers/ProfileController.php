@@ -32,15 +32,21 @@ class ProfileController extends Controller
        
        //HasManyThrough relasjon Bruker->Felt->kategori.
        //Se \App\Models\Bruker->Felt->Kategori
-       $tests = Bruker::with('felt')->where('id', $id)->get();
+       $tests = Bruker::with('felt.objekt')->where('id', $id)->get();
        //$tests = Felt::with('bruker')->where('id', $id)->paginate(5);
        $objekters = Objekt::get();
+       //$obbb = Objekt::where('felt')->where('objekt_id', 'id')->get();
        $obj = Objekt::get();
+       //$objektAntall =  
 
-        return view('bruker.profile', compact('profiles', 'brukers', 'kategoris', 'tests', 'objekters', 'obj'));
+       $users = Felt::with('objekt.kategori')->where('id', $id)->get();
+
+
+
+        return view('bruker.profile', compact('profiles', 'brukers', 'kategoris', 'tests', 'objekters', 'obj', 'users'));
 
     
-    }
+    } 
 
     public function store (Request $request, $id) {
 
@@ -56,9 +62,9 @@ class ProfileController extends Controller
         
             $msg = 'Det er ikke tillatt å bruke objekter som ikke er registret., <a href="'. url('/objekt') . '"> Klikk her  </a>  og opprett ønsket objekt </br> Mulig dada';
             $msg2 = 'Større enn nødvedig';
-            $ff = Objekt::where('name', $request->input('title'))->exists();
+            $ff = Objekt::where('name', $request->input('maxCreate2'))->exists();
             $tt = Objekt::where('max_rom', '<=',  $request->input('rom'))->get()->first();
-            //$new = DB::table('objekts')->select('max_rom')->where('max_rom', '<=', $request->input('rom'))->get()->first();
+            //$newTest = DB::table('objekts')->select('max_rom')->where('max_rom', '<=', $request->input('rom'))->get()->first();
             $new = DB::table('objekts')->where([
                 ['name', '=', $request->input('title')],
                 ['max_rom', ">=", $request->input('rom')],
@@ -68,13 +74,14 @@ class ProfileController extends Controller
             // Dersom den eksisterer la brukeren gjennomføre.
             // Eksisterer ikke objektet i Objekter tabelen, stopp lagring, og gi en feilmelding.
 
-            // if(!$new) {
+             //if(!$new) {
 
-            //     dd($new, $request->input('rom'));
-            // } else {
+                //dd($new, $request->input('rom'). "Over");
 
-            //     dd($new, $request->input('rom'));
-            // }
+           // } else {
+
+                 //dd($new, $request->input('rom') . "Under");
+           // }
 
 
             if(!$ff) {
@@ -86,16 +93,21 @@ class ProfileController extends Controller
                 
                 $LagreObjekt = Felt::Create([
                 
-                    'title' => $request->title,
+                    //'title' => $request->title,
                     'kategori_id' => $request->kategori,
                     'bruker_id'    => $request->bruker_id,
                     'info'  => $request->info,
                     'antall_rom'   => $request->rom,
                     'antall_lager' => $request->lager,
-                    'tillatt'      => $request->tillatt
+                    'tillatt'      => $request->tillatt,
+                    'title'     => $request->maxCreate2,
+                    'max_rom' => $request->maxCreate
+                    //'max_rom'      => $request->max_rom
                     //'image' => $request->image->move('public/images/', $imageName)
                 
                     ]);
+
+                    
                 
                 
                 
@@ -128,8 +140,11 @@ class ProfileController extends Controller
         if($LagreObjekt == true) {
 
             return back()->withSuccessMessage('Nytt Objekt lagret uten feil');
+            //dd($request->maxCreate. $request->maxCreate2);
 
         } else {
+
+            //dd($LagreObjekt);
 
             return back()->with('status', 'Noe har gått galt under registrering');
 

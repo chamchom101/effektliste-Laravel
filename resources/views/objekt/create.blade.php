@@ -84,6 +84,13 @@
                       @enderror
                     
                 </div>
+                <!-- START TEST-->
+                
+            
+                    <input type="hidden" class="form-control" id="basicInput" name="id">
+                
+            
+                <!-- END TEST-->
             </div>
             </div>
 

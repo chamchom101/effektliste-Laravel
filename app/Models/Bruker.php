@@ -47,8 +47,13 @@ class Bruker extends Model
 
     public function felts () { //country
 
-      return $this->hasManyThrough(Felt::class, kategori::class);
+      return $this->hasManyThrough(Felt::class, kategori::class, Objekt::class);
   }
+
+  //public function felts () { //country
+
+    //return $this->hasManyThrough(Felt::class, kategori::class);
+//}
 
   public function fremstilling () {
 

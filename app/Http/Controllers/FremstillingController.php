@@ -50,6 +50,12 @@ class FremstillingController extends Controller
 
         } else {
 
+
+            $this->validate($request, [
+
+                'info' => 'nullable'
+            ]);
+
             $FlyttData = Fremstilling::Create([
 
                 'name' => $request->objekt,

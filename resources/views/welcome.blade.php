@@ -33,8 +33,9 @@
                 <div class="alert alert-primary" role="alert">
                     <div class="alert-body">
                     
-                        <strong>Info:</strong> * Informasjon om oppdateringer og endringer.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp.
-                        
+                        <strong>Info:</strong> * Informasjon om oppdateringer og endringer.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp.</br>
+
+                        <strong>Info:</strong> Ved feil, kontkat meg på hassan.cherry@kriminalomsorg.no
                     </div>
                 </div>
             </div>
@@ -68,39 +69,48 @@
                     </p>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped">
+                <table id="example" class="display" style="width:100%">
                         <thead>
+                        
                             <tr>
-                                <th>Navn</th>
+                            <th>Navn</th>
                                 <th>Logg</th>
-                                <th>Rom/Lager</th>
-                                <th></th>
+                                <th>Print</th>
                                 <th>Mer</th>
                             </tr>
+                           
                         </thead>
+                        
                         <tbody>
-                            @if($brukers->count())
-                            @foreach ($brukers as $bruker )
+                       
+                        @if($brukers->count())
+                            @foreach ($brukers as $bruker ) 
+
                             <tr>
                                 <td>
-                                    <img src="../../../app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular">
+                                <img src="../../../app-assets/images/icons/angular.svg" class="mr-75" height="20" wdth="20" alt="Angular">
                                     <span class="font-weight-bold"></span>
-                                    <a href="{{route('profile', $bruker->id)}}">{{$bruker->navn}}</a>
-                                    
+                                    <a href="{{route('profile', $bruker->id)}}">{{$bruker->innsatt_nummer}} {{$bruker->navn}}</a>
                                 </td>
-                                <td><div class="avatar-content">
+
+                                <td>
+                                <div class="avatar-content">
                                     <a href="{{route('log.view', $bruker->id)}}">
                                     <img src="../../../app-assets/images/icons/loggicon.png" alt="Toolbar svg">
                                     </a>
-                                </div></td>
+                                </div>
+
+                                </td>
                                 <td>
-                                    <div class="avatar-group">
-                                        {{$countFelt}}
+                                <div class="avatar-group">
+                                        <a href="/dokument/{{$bruker->id}}">Print</a>
                                     </div>
                                 </td>
-                                <td><span class="badge badge-pill badge-light-primary mr-1">Active</span></td>
+                                
+                                
                                 <td>
-                                    <div class="dropdown">
+
+                                <div class="dropdown">
                                         <button type="button" class="btn btn-sm dropdown-toggle hide-arrow waves-effect waves-float waves-light" data-toggle="dropdown" aria-expanded="false">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                                         </button>
@@ -142,10 +152,9 @@
                             @else
                             <p>Finner ingen data</p>
                             @endif
-
-
-
-                        </tbody>
+                           
+                            
+                        </tfoot>
                     </table>
                     <div class="row">
                         <div class="col-12 mt-3 pb-3 pl-2">

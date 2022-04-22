@@ -1,4 +1,4 @@
-<div class="customizer-footer px-2">
+<!-- <div class="customizer-footer px-2">
     <p class="font-weight-bold">Footer Type</p>
     <div class="d-flex">
       <div class="custom-control custom-radio mr-1">
@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
     </div>
     <!-- End: Customizer-->
@@ -102,6 +102,37 @@ $("#myModal").modal("show");
 $("#myModal").css("z-index", "1500");
 
     </script>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("mytitle");
+    var text = x.options[x.selectedIndex].text;
+    document.getElementById("demo").value = option.text;
+
+    console.log(text);
+    
+  }
+
+
+  </script>
+
+<script type="text/javascript">
+  function update() {
+    var select = document.getElementById('obj');
+    var option = select.options[select.selectedIndex];
+    var x = option.value;
+    var y = option.text;
+
+    document.getElementById('demo').value = x;
+    document.getElementById('demo2').value = y;
+
+    console.log(x);
+  }
+
+  update();
+</script>
+
+
 
 
   </body>

@@ -39,7 +39,10 @@ class Felt extends Model
         'kategori_id',
         'image',
         'causer_id',
-        'tillatt'
+        'tillatt',
+        'max_rom'
+        
+        
     ];
 
     protected static $logAttributes = ['title', 'antall_rom', 'antall_lager', 'info'];
@@ -85,6 +88,11 @@ class Felt extends Model
     public function fremstilling () {
 
         return $this->hasMany(Fremstilling::class);
+    }
+
+    public function objekt () {
+
+        return $this->hasMany(Objekt::class);
     }
 
 

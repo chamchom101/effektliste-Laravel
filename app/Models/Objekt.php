@@ -21,6 +21,18 @@ class Objekt extends Model
 
     public function felt () {
 
-        return $this->hasMany(Felt::class);
+        return $this->hasMany(Felt::class, bruker::class);
     }
+
+    public function bruker () {
+
+        return $this->belongsTo(Bruker::class);
+    }
+
+    
+
+    //public function felt () {
+
+        //return $this->hasMany(Felt::class);
+    //}
 }

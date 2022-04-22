@@ -2,6 +2,7 @@
 
 use App\Models\Felt;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\BrukerController;
@@ -89,5 +90,14 @@ Route::get('test', function(Request $request){
     $tre = $request->flash('Hassan');
 
     dd($tre);
+
+});
+
+
+Route::get('dev/{id}', function() {
+
+    //users = Felt::with('objekt.kategori')->where('id', $id)->get();
+
+
 
 });

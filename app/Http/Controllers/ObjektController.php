@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Objekt;
+use App\Models\Felt;
 use Illuminate\Http\Request;
 
 class ObjektController extends Controller
@@ -10,6 +11,8 @@ class ObjektController extends Controller
      public function index () {
 
         $Objekter = Objekt::get();
+        $felt = Felt::get();
+        //$tests = Felt::with('Objekt')->get();
 
         return view('objekt.view', compact('Objekter'));
      }
@@ -43,6 +46,14 @@ class ObjektController extends Controller
    
          
          ]);
+
+         $createFelt = Felt::Create([
+
+            
+
+
+         ]);
+         
        }
 
       
@@ -77,7 +88,10 @@ class ObjektController extends Controller
       $updateObjekt->betjent = $request->input('betjent');
       $updateObjekt->save();
 
+
       if($updateObjekt == true) {
+
+         //dd($updateFelt->max_rom);
 
          return  redirect('/objekt')->withSuccessMessage('Redigering av objekt ' . $updateObjekt->name . ' Gjennomført');
       } else {

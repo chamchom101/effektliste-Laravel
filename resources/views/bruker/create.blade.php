@@ -12,18 +12,20 @@
                     <div class="row">
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                             <label for="mytitle">Objekt</label>
-                            <input type="text" list="obj" id="mytitle" name="title" class="form-control credit-card-mask @error('title') border border-danger @enderror" placeholder="Genser, bukser, sokker" />
-                            <datalist id="obj">
+                            <!--<input type="text" list="obj" id="mytitle" name="title" class="form-control credit-card-mask @error('title') border border-danger @enderror" placeholder="Genser, bukser, sokker"  onChange="update()"/>-->
+                            <select id="obj" name="title" class="form-control credit-card-mask @error('title') border border-danger @enderror" placeholder="Genser, bukser, sokker"  onChange="update()">
                                 
                                     
                                 @foreach ($objekters as $objekt )
                                     
                                 
-                                <option value="{{$objekt->name}}"></option>
+                                <option id="{{$objekt->max_rom}}" value="{{$objekt->max_rom}}">{{$objekt->name}}</option>
+                                
+                                
 
                                     @endforeach
                                 
-                            </datalist>
+                            </select>
                             @error('title')
                             <div class="text-danger">
 
@@ -32,6 +34,14 @@
                     </div>
                           @enderror
                         </div>
+                        
+                        <input type="hidden" name="maxCreate" value="" id="demo">
+                        
+                        <input type="hidden" name="maxCreate2" value="" id="demo2">
+                        
+                        
+                 
+
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                             <label for="credit-card">Litt info om objektet</label>
                             <input type="text" name="info" class="form-control credit-card-mask" placeholder="" id="credit-card">
