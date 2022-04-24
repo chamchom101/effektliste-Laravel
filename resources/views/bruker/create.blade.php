@@ -9,9 +9,22 @@
                     <h4 class="card-title">Ny effektobjekt</h4>
                 </div>
                 <div class="card-body">
+                     <!---->
+
+                
+
+                        <!---->
                     <div class="row">
+
+                       
+
+
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                             <label for="mytitle">Objekt</label>
+
+
+                            
+
                             <!--<input type="text" list="obj" id="mytitle" name="title" class="form-control credit-card-mask @error('title') border border-danger @enderror" placeholder="Genser, bukser, sokker"  onChange="update()"/>-->
                             <select id="obj" name="title" class="form-control credit-card-mask @error('title') border border-danger @enderror" placeholder="Genser, bukser, sokker"  onChange="update()">
                                 

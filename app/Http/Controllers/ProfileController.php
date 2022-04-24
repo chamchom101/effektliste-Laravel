@@ -24,6 +24,7 @@ class ProfileController extends Controller
 
        $profiles = Bruker::with('felt')->find($id);
        $brukers = Bruker::find($id)->felt;
+       $enkeltBruker = Bruker::get();
        
        //$kategoris = Felt::find($id)->kategori;
 
@@ -32,7 +33,7 @@ class ProfileController extends Controller
        
        //HasManyThrough relasjon Bruker->Felt->kategori.
        //Se \App\Models\Bruker->Felt->Kategori
-       $tests = Bruker::with('felt.objekt')->where('id', $id)->get();
+       $tests = Bruker::with('felt')->where('id', $id)->get()->sortByDesc('pin');
        //$tests = Felt::with('bruker')->where('id', $id)->paginate(5);
        $objekters = Objekt::get();
        //$obbb = Objekt::where('felt')->where('objekt_id', 'id')->get();
@@ -43,7 +44,7 @@ class ProfileController extends Controller
 
 
 
-        return view('bruker.profile', compact('profiles', 'brukers', 'kategoris', 'tests', 'objekters', 'obj', 'users'));
+        return view('bruker.profile', compact('profiles', 'brukers', 'kategoris', 'tests', 'objekters', 'obj', 'users', 'enkeltBruker'));
 
     
     } 
@@ -250,5 +251,13 @@ class ProfileController extends Controller
         return view('bruker.profile', compact('profiles', 'objekters', 'kategoris', 'obj', 'tests'));
 
 
+    }
+
+
+    public function over ($id) {
+
+        $hentBruker = Bruker::with('felt')->find($id);
+
+        return view('bruker.over', compact('hentBruker'));
     }
 }

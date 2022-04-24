@@ -69,6 +69,7 @@ Route::post('fremstilling/{id}/tilbake', [FremstillingController::class, 'tilbak
 Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile');
 Route::post('profile/{id}', [ProfileController::class, 'store']);
 Route::get('profile/{id}/edit', [ProfileController::class, 'edit'])->name('bruker.edit');
+Route::get('profile/dokument/over/{id}', [ProfileController::class, 'over'])->name('bruker.over');
 Route::put('/profile/{id}', [ProfileController::class, 'update']);
 Route::get('profile/delete/{id}', [ProfileController::class, 'destroy']);
 

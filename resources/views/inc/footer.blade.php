@@ -39,7 +39,7 @@
     <!-- BEGIN: Vendor JS-->
     <script src="{{asset ('app-assets/vendors/js/vendors.min.js')}}"></script>
 
-    
+    <script src="{{asset ('app-assets/js/scripts/components/components-popovers.js')}}"></script>
 
     <!-- BEGIN Vendor JS-->
 
@@ -51,6 +51,8 @@
     <script src="{{asset ('app-assets/js/scripts/forms/form-number-input.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/jquery/jquery-ui.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset ('app-assets/vendors/js/forms/select/select2.full.min.js')}}"></script>
+    <script src="{{asset ('app-assets/js/scripts/forms/form-select2.js')}}"></script>
 
     
     {{-- <script src="{{asset ('app-assets/vendors/js/jquery/jquery-3.6.0.min.js')}}"></script> --}}
@@ -71,6 +73,7 @@
     <script src="{{asset ('app-assets/DataTables/dataTables.buttons.min.js')}}"></script>
     <script src="{{asset ('app-assets/DataTables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset ('app-assets/js/lightbox.js')}}"></script>
+
 
     <!-- END: Page JS-->
     

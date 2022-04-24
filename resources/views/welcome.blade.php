@@ -2,31 +2,89 @@
 
 @section('content')
 
-<div class="content-wrapper">
-    <div class="content-header row">
-        <div class="content-header-left col-md-9 col-12 mb-2">
-            <div class="row breadcrumbs-top">
-                <div class="col-12">
-                    <h2 class="content-header-title float-left mb-0">Effektos</h2>
-                    <div class="breadcrumb-wrapper">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Hjem</a>
-                            </li>
-                            
-                        </ol>
+<div class="container-fluid">
+    <div class="row match-height">
+        <!-- Medal Card -->
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="card card-congratulation-medal">
+                <div class="card-body">
+                    <h5>Version</h5>
+                    <p class="card-text font-small-3">23.04.2022</p>
+                    <h3 class="mb-75 mt-2 pt-50">
+                        <a href="javascript:void(0);">1.03</a>
+                    </h3>
+                    <button type="button" class="btn btn-primary waves-effect waves-float waves-light">Les Mer..</button>
+                    <img src="../../../app-assets/images/illustration/badge.svg" class="congratulation-medal" alt="Medal Pic">
+                </div>
+            </div>
+        </div>
+        <!--/ Medal Card -->
+
+        <!-- Statistics Card -->
+        <div class="col-xl-8 col-md-6 col-12">
+            <div class="card card-statistics">
+                <div class="card-header">
+                    <h4 class="card-title">Statistics</h4>
+                    <div class="d-flex align-items-center">
+                        <p class="card-text font-small-2 mr-25 mb-0">Updated 1 month ago</p>
+                    </div>
+                </div>
+                <div class="card-body statistics-body">
+                    <div class="row">
+
+                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                            <div class="media">
+                                <div class="avatar bg-light-info mr-2">
+                                    <div class="avatar-content">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user avatar-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    </div>
+                                </div>
+                                <div class="media-body my-auto">
+                                    <h4 class="font-weight-bolder mb-0">{{$enkeltBruker}}</h4>
+                                    <p class="card-text font-small-3 mb-0">Brukere</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                            <div class="media">
+                                <div class="avatar bg-light-danger mr-2">
+                                    <div class="avatar-content">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box avatar-icon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                                    </div>
+                                </div>
+                                <div class="media-body my-auto">
+                                    <h4 class="font-weight-bolder mb-0">{{$brukerUt}}</h4>
+                                    <p class="card-text font-small-3 mb-0">Inaktiv</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                            <div class="media">
+                                <div class="avatar bg-light-primary mr-2">
+                                    <div class="avatar-content">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up avatar-icon"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                                    </div>
+                                </div>
+                                <div class="media-body my-auto">
+                                    <h4 class="font-weight-bolder mb-0"></h4>
+                                    <p class="card-text font-small-3 mb-0"></p>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        
+                        
                     </div>
                 </div>
             </div>
         </div>
-        <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
-            <div class="form-group breadcrumb-right">
-                <div class="dropdown">
-                    <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle waves-effect waves-float waves-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button>
-                    <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="app-todo.html"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg><span class="align-middle">Todo</span></a><a class="dropdown-item" href="app-chat.html"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square mr-1"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><span class="align-middle">Chat</span></a><a class="dropdown-item" href="app-email.html"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail mr-1"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span class="align-middle">Email</span></a><a class="dropdown-item" href="app-calendar.html"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar mr-1"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span class="align-middle">Calendar</span></a></div>
-                </div>
-            </div>
-        </div>
+        <!--/ Statistics Card -->
     </div>
+
+
+
     <div class="content-body">
         <div class="row">
             <div class="col-12">
@@ -34,7 +92,7 @@
                     <div class="alert-body">
                     
                         <strong>Info:</strong> * Informasjon om oppdateringer og endringer.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp.</br>
-
+                        <strong>Oppdatering: V.1.03</strong></br>
                         <strong>Info:</strong> Ved feil, kontkat meg på hassan.cherry@kriminalomsorg.no
                     </div>
                 </div>
@@ -88,7 +146,7 @@
 
                             <tr>
                                 <td>
-                                <img src="../../../app-assets/images/icons/angular.svg" class="mr-75" height="20" wdth="20" alt="Angular">
+                                <img src="../../../app-assets/images/logo/default.png" class="mr-75" height="20" wdth="20" alt="Angular">
                                     <span class="font-weight-bold"></span>
                                     <a href="{{route('profile', $bruker->id)}}">{{$bruker->innsatt_nummer}} {{$bruker->navn}}</a>
                                 </td>
@@ -168,6 +226,5 @@
     </div>
     <!-- END TABLE-->
 
-</div><!-- END WARPER-->
-
+</div>
 @endsection
