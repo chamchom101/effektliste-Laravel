@@ -13,6 +13,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FremstillingController;
 use App\Http\Controllers\CreateKategoriController;
+use App\Http\Controllers\VersionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +79,9 @@ Route::get('dokument/view', [DokumentController::class, 'view'])->name('dokument
 Route::get('dokument/{id}', [DokumentController::class, 'index'])->name('dokument.preview');
 Route::get('dokument/print/{id}', [DokumentController::class, 'print'])->name('dokument.print');
 Route::post('dokument/print/bruker/{id}', [DokumentController::class, 'printValue'])->name('dokument.printvalue');
+
+/* Version View */
+Route::get('version', [VersionController::class, 'view'])->name('version.view');
 
 
 Route::get('/log/{id}', [LogController::class, 'index'])->name('log.view');

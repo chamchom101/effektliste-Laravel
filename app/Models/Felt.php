@@ -7,22 +7,22 @@ use App\Models\Objekt;
 use App\Models\Kategori;
 use App\Models\Fremstilling;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Activitylog\Models\Activity;
-use Spatie\Activitylog\Traits\LogsActivity;
-use Spatie\Activitylog\Traits\CausesActivity;
+//use Spatie\Activitylog\Models\Activity;
+//use Spatie\Activitylog\Traits\LogsActivity;
+//use Spatie\Activitylog\Traits\CausesActivity;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Felt extends Model
 {
     use HasFactory;
-    use LogsActivity;
-    use CausesActivity;
+   // use LogsActivity;
+   // use CausesActivity;
 
-    public function tapActivity(Activity $activity, string $eventName)
-    {
-        $activity->causer_id = Felt::all()->last()->bruker_id;
-        $activity->description = "{$eventName}";
-    }
+    // public function tapActivity(Activity $activity, string $eventName)
+    // {
+    //     $activity->causer_id = Felt::all()->last()->bruker_id;
+    //     $activity->description = "{$eventName}";
+    // }
 
     
     protected $table = 'felts';
@@ -40,7 +40,8 @@ class Felt extends Model
         'image',
         'causer_id',
         'tillatt',
-        'max_rom'
+        'max_rom',
+        'pin'
         
         
     ];

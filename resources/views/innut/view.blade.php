@@ -2,7 +2,9 @@
 
 @section('content')
 
+<div class="container-fluid">
 <section id="accordion-with-border">
+    
     <div class="row" id="basic-table">
         <div class="col-12">
             <div id="accordionWrapa50" role="tablist" aria-multiselectable="false">
@@ -46,7 +48,7 @@
                                                    
                                                     <tr>
                                                         <td>
-                                                            <img src="../../../app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular">
+                                                            <img src="../../../app-assets/images/logo/Default.png" class="mr-75" height="20" width="20" alt="Angular">
                                                             <span class="font-weight-bold">{{$fr->name}}</span>
                                                         </td>
                                                         <td>
@@ -129,7 +131,9 @@
             </div>
         </div>
     </div>
+    
 </section>
+</div>
 
       
 

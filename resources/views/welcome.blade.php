@@ -24,9 +24,9 @@
         <div class="col-xl-8 col-md-6 col-12">
             <div class="card card-statistics">
                 <div class="card-header">
-                    <h4 class="card-title">Statistics</h4>
+                    <h4 class="card-title">Statistikk</h4>
                     <div class="d-flex align-items-center">
-                        <p class="card-text font-small-2 mr-25 mb-0">Updated 1 month ago</p>
+                        <p class="card-text font-small-2 mr-25 mb-0"></p>
                     </div>
                 </div>
                 <div class="card-body statistics-body">

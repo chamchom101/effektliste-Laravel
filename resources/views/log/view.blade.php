@@ -2,6 +2,7 @@
 
 @section('content')
 
+<div class="container-fluid">
 <section class="basic-timeline">
                     <div class="row">
                         <div class="col-12">
@@ -24,11 +25,10 @@
                                                         <span>Opprettet</span>
                                                     </div>
                                                     
-                                                    <span class="timeline-event-time">12 min ago</span>
+                                                    <span class="timeline-event-time">{{$logg->updated_at->format('d-m-Y')}}</span>
                                                 </div>
-                                                <p>{{$logg->created_at->format('d-m-Y')}}: Objekt  <strong>{{ $logg->properties['attributes']['title'] ?? ''}}</strong> Opprettet av (NAVN)</p>
-                                                <p>sssss</p>
-                                                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp.</p>
+                                                <p>{{$logg->created_at->format('d-m-Y')}}: Objekt  <strong>{{ $logg->properties['attributes']['title'] ?? ''}}</strong> </p>
+                                                
                                                 
                                             </div>
                                         </li>
@@ -45,16 +45,13 @@
                                                         <span>Redigert</span>
                                                     </div>
                                                     
-                                                    <span class="timeline-event-time">12 min ago</span>
+                                                    <span class="timeline-event-time">{{$logg->updated_at->format('d-m-Y')}}</span>
                                                 </div>
                                                 <p><strong>{{$logg->created_at->format('d-m-Y')}}:</strong> Objekt endret fra <strong>{{ $logg->properties['old']['title'] ?? 'Ingen endring'}}</strong> til <strong>{{$logg->properties['attributes']['title'] ?? 'Ingen endring'}}</strong> </p>
                                                 <p>Antall på rommet endret fra <strong>{{$logg->properties['old']['antall_rom'] ?? 'Ingen endring'}}</strong> til <strong>{{$logg->properties['attributes']['antall_rom'] ?? 'Ingen endring'}}</strong> </p>
                                                 <p>Antall på lageret endret fra <strong>{{$logg->properties['old']['antall_lager'] ?? 'Ingen endring'}}</strong> til <strong>{{$logg->properties['attributes']['antall_lager'] ?? 'Ingen endring'}}</strong></p>
                                                 <p>Notat endret fra <strong>{{$logg->properties['old']['info'] ?? 'Ingen endring'}}</strong> til <strong>{{$logg->properties['attributes']['info'] ?? 'Ingen endring'}}</strong></p>
-                                                <p>Ingen data</p>
-                                                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp.</p>
-                                                
-                                                
+                                                <p>Ingen data</p>  
                                             </div>
                                         </li>
                             
@@ -71,10 +68,10 @@
                                                         <span>Slettet</span>
                                                     </div>
                                                     
-                                                    <span class="timeline-event-time">12 min ago</span>
+                                                    <span class="timeline-event-time">{{$logg->updated_at->format('d-m-Y')}}</span>
                                                 </div>
-                                                <p>{{$logg->created_at->format('d-m-Y')}}: Objekt <strong>{{ $logg->properties['attributes']['title'] ?? ''}}</strong> slettet av (NAVN)</p>
-                                                <p>sssss</p>
+                                                <p>{{$logg->created_at->format('d-m-Y')}}: Objekt <strong>{{ $logg->properties['attributes']['title'] ?? ''}}</strong></p>
+                                                
                                                 
                                             </div>
                                         </li>
@@ -90,5 +87,6 @@
                        
                     </div>
                 </section>
+</div>
 
 @endsection

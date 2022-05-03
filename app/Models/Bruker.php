@@ -8,13 +8,13 @@ use App\Models\Profile;
 use App\Models\Kategori;
 use App\Models\Fremstilling;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Activitylog\Traits\LogsActivity;
+//use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Bruker extends Model
 {
     use HasFactory;
-    use LogsActivity;
+    //use LogsActivity;
 
      protected $fillable = [
 

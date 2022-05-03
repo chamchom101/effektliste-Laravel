@@ -94,12 +94,22 @@
                                 <label class="custom-control-label" for="colorCheck5">Skal Ikke på rom</label>
                             </div>
                             </div>
+                             
+                            <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                <label for="lager">Pin</label>
+                                <div class="custom-control custom-control-danger custom-checkbox">
+                                    <input type="checkbox" name="viktig" class="custom-control-input" value="1" id="colorCheck6">
+                                    <label class="custom-control-label" for="colorCheck6">Viktig</label>
+                                </div>
+                                </div>
+
                         </div>
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                             <label for="image">Last opp bildet</label>
                             <input type="file" class="form-control-file" value="test" name="image" id="exampleFormControlFile1">
                         </div>
-                        
+
+                       
 
                         <button type="submit" class="btn btn-relief-primary mt-2">Send</button>
                         

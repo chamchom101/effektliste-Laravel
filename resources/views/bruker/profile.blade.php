@@ -169,6 +169,67 @@
                </div>
                @endif
                 <div class="card-datatable">
+
+
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Punkt</th>
+                                    <th>Antall</th>
+                                    <th>Status</th>
+                                    <th>Bilde</th>
+                                    <th>Mer..</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($tests as $test)
+                            @foreach ($test->felt->sortBy('kategori_id') as $felt )
+                            @if($felt->pin == 1)
+                                <tr>
+                                    <td>
+                                        <img src="../../../app-assets/images/logo/default.png" class="mr-75" height="20" width="20" alt="Angular">
+                                        <span class="font-weight-bold">{{$felt->title}}</span>
+                                    </td>
+                                    <td>{{$felt->antall_lager}}</td>
+                                    <td><span class="badge badge-pill badge-light-danger mr-1">Viktig</span></td>
+                                    <td>
+
+                                        @if($felt->image === null)
+                    <img src="{{asset('public/images/unknown.png')}}" class="rounded mr-1" height="30" alt="Googleee Chrome">
+                    @else
+                    
+                    <a href="{{asset('/storage/images/' . $felt->image)}}" data-lightbox="roadtrip" class="rounded mr-1" height="30">
+                        <img src="{{asset('/storage/images/' . $felt->image)}}" class="rounded mr-1" height="30" width="30" alt="Google Chrome">
+                    </a>
+                    @endif
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn btn-sm dropdown-toggle hide-arrow waves-effect waves-float waves-light" data-toggle="dropdown">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="{{route('bruker.edit', $felt->id)}}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 mr-50"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+                                                    <span>Edit</span>
+                                                </a>
+                                                <a class="dropdown-item" href="/profile/delete/{{$felt->id}}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash mr-50"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                @endif
+                                @endforeach
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+
                     <table id="example" class="display" style="width:100%">
                         <thead>
                             <tr>
@@ -209,9 +270,16 @@
 
 
 
-                               <td> <button type="button" class="btn btn-outline-primary waves-effect" data-toggle="popover" data-placement="top" data-container="body" data-original-title="Popover on top" data-content="{{$felt->info}}">
+                                @if($felt->info === null) 
+                                <td> <button type="button" class="btn btn-outline-primary waves-effect manual" data-toggle="popover" data-trigger="manual" data-placement="top" data-container="body" data-original-title="{{$felt->title}}" data-content="{{$felt->info}}">
                                     Info
                                 </button> </td>
+                                @else
+
+                                <td> <button type="button" class="btn btn-outline-success waves-effect manual" data-toggle="popover" data-trigger="manual" data-placement="top" data-container="body" data-original-title="{{$felt->title}}" data-content="{{$felt->info}}">
+                                    Info
+                                </button> </td>
+                                @endif
 
 
 
@@ -272,12 +340,12 @@
                                 <td>{{$felt->antall_lager}}</td>
                                 <td>{{$felt->kategori->titel ?? ''}}</td>
                                 @if($felt->info === null) 
-                                <td> <button type="button" class="btn btn-outline-primary waves-effect" data-toggle="popover" data-placement="top" data-container="body" data-original-title="Popover on top" data-content="{{$felt->info}}">
+                                <td> <button type="button" class="btn btn-outline-primary waves-effect manual" data-toggle="popover" data-trigger="manual" data-placement="top" data-container="body" data-original-title="{{$felt->title}}" data-content="{{$felt->info}}">
                                     Info
                                 </button> </td>
                                 @else
 
-                                <td> <button type="button" class="btn btn-outline-success waves-effect" data-toggle="popover" data-placement="top" data-container="body" data-original-title="Popover on top" data-content="{{$felt->info}}">
+                                <td> <button type="button" class="btn btn-outline-success waves-effect manual" data-toggle="popover" data-trigger="manual" data-placement="top" data-container="body" data-original-title="{{$felt->title}}" data-content="{{$felt->info}}">
                                     Info
                                 </button> </td>
                                 @endif

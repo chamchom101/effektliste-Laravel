@@ -102,7 +102,8 @@ class ProfileController extends Controller
                     'antall_lager' => $request->lager,
                     'tillatt'      => $request->tillatt,
                     'title'     => $request->maxCreate2,
-                    'max_rom' => $request->maxCreate
+                    'max_rom' => $request->maxCreate,
+                    'pin'     => $request->viktig
                     //'max_rom'      => $request->max_rom
                     //'image' => $request->image->move('public/images/', $imageName)
                 
@@ -159,10 +160,11 @@ class ProfileController extends Controller
     public function edit ($id) {
 
         $editObjekt = Felt::find($id);
+        $getObjekt = Felt::where('id', $id)->get();
         $katObjekt = Kategori::get();
         $headerObjekt = Kategori::find($id);
 
-        return view('bruker.edit', compact('editObjekt', 'katObjekt', 'headerObjekt'));
+        return view('bruker.edit', compact('editObjekt', 'katObjekt', 'headerObjekt', 'getObjekt'));
 
 
     }
@@ -176,6 +178,18 @@ class ProfileController extends Controller
         $feltUpdate->antall_lager = $request->input('lager');
         $feltUpdate->info = $request->input('info');
         $feltUpdate->kategori_id = $request->input('kategori');
+        $feltUpdate->tillatt = $request->input('tillatt');
+        $feltUpdate->pin = $request->input('viktig');
+
+        if($request->hasFile('image')) {
+           
+            $filename = $request->image->getClientOriginalname();
+            $request->image->StoreAs('images', $filename, 'public');
+            $feltUpdate->image = $filename;
+            //$imageID = Felt::all()->last()->id;
+            //Felt::find($imageID)->update(['image' => $filename]);
+
+            } 
         //$activity->causer_id = $request->input('bruker_id');
         //$activity->description = $request->input('objekt');
 
@@ -200,7 +214,7 @@ class ProfileController extends Controller
         if($feltUpdate == true) {
 
             return  redirect('/profile/' . $feltUpdate->bruker_id)->withSuccessMessage('Redigering gjennomført uten feil');
-
+            //dd($feltUpdate);
 
         } else {
 

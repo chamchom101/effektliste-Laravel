@@ -40,6 +40,7 @@
     <script src="{{asset ('app-assets/vendors/js/vendors.min.js')}}"></script>
 
     <script src="{{asset ('app-assets/js/scripts/components/components-popovers.js')}}"></script>
+    <script src="{{asset ('app-assets/vendors/js/extensions/swiper.min.js')}}"></script>
 
     <!-- BEGIN Vendor JS-->
 
@@ -64,6 +65,9 @@
     <script src="{{asset ('app-assets/js/core/app-menu.min.js')}}"></script>
     <script src="{{asset ('app-assets/js/core/app.min.js')}}"></script>
     <script src="{{asset ('app-assets/js/scripts/customizer.min.js')}}"></script>
+    <script src="{{asset ('app-assets/js/scripts/extensions/ext-component-swiper.js')}}"></script>
+
+    
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
@@ -134,6 +138,38 @@ $("#myModal").css("z-index", "1500");
 
   update();
 </script>
+
+<script type="text/javascript">
+
+function seom() {
+
+  if(document.getElementById('colorCheck5').checked) {
+
+   document.getElementById('colorCheck5').value = 1;
+
+  } else {
+
+    document.getElementById('colorCheck5').value = 0;
+  }
+}
+
+</script>
+
+<script type="text/javascript">
+
+  function seom2() {
+  
+    if(document.getElementById('colorCheck6').checked) {
+  
+     document.getElementById('colorCheck6').value = 1;
+  
+    } else {
+      
+      document.getElementById('colorCheck6').value = 0;
+    }
+  }
+  
+  </script>
 
 
 
