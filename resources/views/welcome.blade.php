@@ -13,7 +13,7 @@
                     <h3 class="mb-75 mt-2 pt-50">
                         <a href="javascript:void(0);">1.03</a>
                     </h3>
-                    <button type="button" class="btn btn-primary waves-effect waves-float waves-light">Les Mer..</button>
+                    <button type="button" onclick="location.href='{{route('version.view')}}'" class="btn btn-primary waves-effect waves-float waves-light">Les Mer..</button>
                     <img src="../../../app-assets/images/illustration/badge.svg" class="congratulation-medal" alt="Medal Pic">
                 </div>
             </div>

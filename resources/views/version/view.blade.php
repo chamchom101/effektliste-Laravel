@@ -30,9 +30,16 @@
                                 <img src="../../../app-assets/images/logo/default.png" class="mr-75" height="20" width="20" alt="Angular">
                                 <span class="font-weight-bold">{{$content->content}}</span>
                             </td>
-                            <td><span class="badge badge-pill badge-light-primary mr-1">Active</span></td>
-                           
-                            <td><span class="badge badge-pill badge-light-primary mr-1">12.0.3</span></td>
+                            @if($content->icon === 1)
+                            <td><span class="badge badge-pill badge-light-primary mr-1">Oppdatert</span></td>
+                            @elseif ($content->icon === 2)
+                            <td><span class="badge badge-pill badge-light-info mr-1">Utbedring</span></td>
+                            @elseif ($content->icon === 3)
+                            <td><span class="badge badge-pill badge-light-success mr-1">Nytt</span></td>
+                            @elseif ($content->icon === 4)
+                            <td><span class="badge badge-pill badge-light-danger mr-1">Fjernet</span></td>
+                           @endif
+                            <td><span class="badge badge-pill badge-light-primary mr-1">{{$content->dato}}</span></td>
                            
                         </tr>
 

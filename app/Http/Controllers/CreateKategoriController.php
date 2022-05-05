@@ -10,7 +10,8 @@ class CreateKategoriController extends Controller
 {
     public function index () {
 
-        $VisKategoris = Kategori::get();
+        $VisKategoris = Kategori::paginate(10);
+        
 
         return view('kategori.create', compact('VisKategoris'));
     }

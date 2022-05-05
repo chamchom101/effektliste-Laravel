@@ -15,18 +15,11 @@
         
         <li class=" navigation-header"><span data-i18n="User Interface">General</span><i data-feather="more-horizontal"></i>
         </li>
-        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Registrer</span></a>
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="settings"></i><span class="menu-title text-truncate" data-i18n="Typography">Systemvalg</span></a>
         </li>
-        <li class=" navigation-header"><span data-i18n="User Interface">Tilpass</span><i data-feather="more-horizontal"></i>
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="git-commit"></i><span class="menu-title text-truncate" data-i18n="Typography">Version</span></a>
         </li>
-        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('kategori.create')}}"><i data-feather="folder"></i><span class="menu-title text-truncate" data-i18n="Typography">Kategori</span></a>
-        </li>
-        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('objekt.view')}}"><i data-feather="list"></i><span class="menu-title text-truncate" data-i18n="Typography">Objekter</span></a>
-        </li>
-        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('innut')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Typography">Ut/Inn</span></a>
-        </li>
-        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('dokument.view')}}"><i data-feather="printer"></i><span class="menu-title text-truncate" data-i18n="Typography">Print</span></a>
-        </li>
+  
         
        
        

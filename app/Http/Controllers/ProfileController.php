@@ -160,11 +160,12 @@ class ProfileController extends Controller
     public function edit ($id) {
 
         $editObjekt = Felt::find($id);
+        $getKatName = Kategori::where('id', '=',  5);
         $getObjekt = Felt::where('id', $id)->get();
         $katObjekt = Kategori::get();
         $headerObjekt = Kategori::find($id);
 
-        return view('bruker.edit', compact('editObjekt', 'katObjekt', 'headerObjekt', 'getObjekt'));
+        return view('bruker.edit', compact('editObjekt', 'katObjekt', 'headerObjekt', 'getObjekt', 'getKatName'));
 
 
     }

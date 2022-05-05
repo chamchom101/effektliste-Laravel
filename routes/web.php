@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\SettingsController;
+use App\Http\Controllers\AdminController;
 use App\Models\Felt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +16,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FremstillingController;
 use App\Http\Controllers\CreateKategoriController;
 use App\Http\Controllers\VersionController;
+use App\Http\Controllers\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +85,18 @@ Route::post('dokument/print/bruker/{id}', [DokumentController::class, 'printValu
 
 /* Version View */
 Route::get('version', [VersionController::class, 'view'])->name('version.view');
+
+/*Admin Routes */
+Route::get('admin', [AdminController::class, 'view'])->name('admin');
+Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('auth');
+Route::post('admin', [AdminController::class, 'login'])->name('login');
+Route::get('admin/settings', [SettingsController::class, 'index'])->name('admin.settings')->middleware('auth');
+
+
+/* Video Route */
+Route::get('video', [VideoController::class, 'index'])->name('video.view');
+
+
 
 
 Route::get('/log/{id}', [LogController::class, 'index'])->name('log.view');

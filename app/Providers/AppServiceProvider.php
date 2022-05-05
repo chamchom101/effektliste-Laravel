@@ -2,7 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Setting;
+use Illuminate\Support\Arr;
+//use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +28,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        
+        View::share('settingTitel', Setting::find(1));
+        View::share('settingLogo', Setting::find(2));
+        
     }
 }

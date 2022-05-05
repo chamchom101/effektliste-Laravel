@@ -18,7 +18,7 @@
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label for="first-name-column">Objekt</label>
-                                    <input type="text" value="{{$editObjekt->title}}" id="first-name-column" readonly="readonly" class="form-control" placeholder="" name="objekt">
+                                    <input type="text" value="{{$editObjekt->title}}" id="first-name-column"  class="form-control" placeholder="" name="objekt">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
@@ -32,7 +32,7 @@
                                 <label for="credit-card">Kategori</label>
                                 <select class="form-control" name="kategori" id="basicSelect">
                                     
-                                    <option value="{{$editObjekt->kategori_id}}">Velg Kategori</option>
+                                    <option value="{{$editObjekt->kategori_id}}">na</option>
 
                                     @foreach ($katObjekt as $kat)
                                     
@@ -62,7 +62,7 @@
                             <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                 <label for="lager">Ikke tillatt</label>
                                 <div class="custom-control custom-control-danger custom-checkbox" onchange="seom()">
-                                    <input type="checkbox" name="tillatt" class="custom-control-input" value="" id="colorCheck5" checked="">
+                                    <input type="checkbox" name="tillatt" class="custom-control-input" value="1" id="colorCheck5" checked="">
                                     <label class="custom-control-label" for="colorCheck5">Skal Ikke på rom</label>
                                 </div>
                                 </div>
@@ -71,7 +71,7 @@
                                  <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                     <label for="lager">Ikke tillatt</label>
                                     <div class="custom-control custom-control-danger custom-checkbox" onchange="seom()">
-                                        <input type="checkbox" name="tillatt" class="custom-control-input" value="" id="colorCheck5">
+                                        <input type="checkbox" name="tillatt" class="custom-control-input" value="0" id="colorCheck5">
                                         <label class="custom-control-label" for="colorCheck5">Skal Ikke på rom</label>
                                     </div>
                                     </div>
@@ -89,7 +89,7 @@
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label for="lager">Pin</label>
                                         <div class="custom-control custom-control-danger custom-checkbox" onchange="seom2()">
-                                            <input type="checkbox" name="viktig" class="custom-control-input" value="" id="colorCheck6" checked="">
+                                            <input type="checkbox" name="viktig" class="custom-control-input" value="1" id="colorCheck6" checked="">
                                             <label class="custom-control-label" for="colorCheck6">Viktig</label>
                                         </div>
                                         </div>
@@ -99,7 +99,7 @@
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label for="lager">Pin</label>
                                             <div class="custom-control custom-control-danger custom-checkbox" onchange="seom2()">
-                                                <input type="checkbox" name="viktig" class="custom-control-input" value="" id="colorCheck6">
+                                                <input type="checkbox" name="viktig" class="custom-control-input" value="0" id="colorCheck6">
                                                 <label class="custom-control-label" for="colorCheck6">Viktig</label>
                                             </div>
                                             </div>

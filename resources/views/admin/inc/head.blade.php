@@ -1,5 +1,16 @@
 <!DOCTYPE html>
+<!--
+Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+Author: PixInvent
+Website: http://www.pixinvent.com/
+Contact: hello@pixinvent.com
+Follow: www.twitter.com/pixinvents
+Like: www.facebook.com/pixinvents
+Purchase: https://1.envato.market/vuexy_admin
+Renew Support: https://1.envato.market/vuexy_admin
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 
+-->
 <html class="loading bordered-layout" lang="en" data-layout="bordered-layout" data-textdirection="ltr">
   <!-- BEGIN: Head-->
   <head>
@@ -42,7 +53,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/css/style.css')}}">
 
-    
+
 
   </head>
   <!-- END: Head-->
