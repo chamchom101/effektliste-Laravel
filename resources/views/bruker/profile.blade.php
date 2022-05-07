@@ -130,7 +130,7 @@
         </div>
     </div>
 </div>
-<button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#HentData" aria-expanded="true" aria-controls="HentData">Nytt
+<button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#HentData" aria-expanded="true" aria-controls="HentData">Legg til
 </button>
 
 
@@ -403,7 +403,7 @@
         </div>
 
         @foreach ($users as $user)
-        <a>{{$user->id}}</a> HHHHHH
+        <a>{{$user->id}}</a> 
         @endforeach
 
         

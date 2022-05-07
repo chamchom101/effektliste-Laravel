@@ -16,7 +16,7 @@
                           <div>
                               <div class="d-flex mb-1">
                                 <img src="../../../app-assets/images/logo/default.png" style="width: 100px; height: 80px" alt="" />
-                                  <h3 class="text-primary font-weight-bold ml-1 mt-2">Effektos</h3>
+                                  <h3 class="text-primary font-weight-bold ml-1 mt-2">{{$settingLogo->txt}}</h3>
                               </div>
                               <p class="mb-25">Østfold friomsorgskontor</p>
                               <p class="mb-25">Avdeling fengsel</p>

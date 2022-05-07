@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Felt;
 use App\Models\Bruker;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -73,6 +75,9 @@ class RegisterController extends Controller
 
         $bruker = Bruker::find($id);
         $bruker->delete();
+        
+        //Sletter alle effekter som tilhører bruker
+        DB::table('felts')->where('bruker_id', $id)->delete();
 
         if($bruker == true) {
 

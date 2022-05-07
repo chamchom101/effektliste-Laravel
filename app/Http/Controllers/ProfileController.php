@@ -19,7 +19,7 @@ class ProfileController extends Controller
     public function index ($id) {
 
        
-     $JoinFelt = 
+
 
 
        $profiles = Bruker::with('felt')->find($id);
@@ -33,7 +33,7 @@ class ProfileController extends Controller
        
        //HasManyThrough relasjon Bruker->Felt->kategori.
        //Se \App\Models\Bruker->Felt->Kategori
-       $tests = Bruker::with('felt')->where('id', $id)->get()->sortByDesc('pin');
+       $tests = Bruker::with('felt', 'kategori')->where('id', $id)->get();
        //$tests = Felt::with('bruker')->where('id', $id)->paginate(5);
        $objekters = Objekt::get();
        //$obbb = Objekt::where('felt')->where('objekt_id', 'id')->get();
@@ -235,6 +235,8 @@ class ProfileController extends Controller
 
         $deleteFelt = Felt::find($id);
         $deleteFelt->delete(); 
+
+        
 
             
 

@@ -23,7 +23,7 @@
                               <p class="mb-0">Ravneberget 30 17?? </p>
                           </div>
                           <div class="mt-md-0 mt-2">
-                              <h4 class="font-weight-bold text-right mb-1">INNSATT NUMMER# {{$getBruker->innsatt_nummer}}</h4>
+                              <h4 class="font-weight-bold text-right mb-1">INNSATT NUMMER# {{$fremstillingPrint->innsatt_nummer}}</h4>
                               <div class="invoice-date-wrapper mb-50">
                                   <span class="invoice-date-title">Opprettet:</span>
                                   <span class="font-weight-bold"> {{ date('d-m-Y')}}</span>
@@ -40,8 +40,8 @@
                       <div class="row pb-2">
                           <div class="col-sm-6">
                               <h6 class="mb-1">Tilhørende til:</h6>
-                              <p class="mb-25">Navn: <strong>{{$getBruker->navn}}</strong></p>
-                              <p class="mb-25">Hylle: <strong>{{$getBruker->hylle}}</strong></p>
+                              <p class="mb-25">Navn: <strong>{{$fremstillingPrint->navn}}</strong></p>
+                              <p class="mb-25">Hylle: <strong>{{$fremstillingPrint->hylle}}</strong></p>
                               <p class="mb-25">Dato: <strong>{{date('d-m-Y')}}</strong></p>
                               <p class="mb-25">Betjent:______________________</p>
                               <p class="mb-25">Signatur:_____________________</p>
@@ -94,7 +94,7 @@
                       <div class="row invoice-sales-total-wrapper mt-3">
                           <div class="col-md-6 order-md-1 order-2 mt-md-0 mt-3">
                               <p class="card-text mb-0">
-                                  <span class="font-weight-bold">Opprettet av:</span> {{$getBruker->betjent_navn}}<span class="ml-75"></span>
+                                  <span class="font-weight-bold">Opprettet av:</span> {{$fremstillingPrint->betjent_navn}}<span class="ml-75"></span>
                               </p>
                           </div>
                          

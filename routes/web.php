@@ -17,6 +17,7 @@ use App\Http\Controllers\FremstillingController;
 use App\Http\Controllers\CreateKategoriController;
 use App\Http\Controllers\VersionController;
 use App\Http\Controllers\VideoController;
+use App\Models\Fremstilling;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,7 @@ Route::get('fremstilling', [FremstillingController::class, 'index'])->name('innu
 Route::get('fremstilling/{id}/edit', [FremstillingController::class, 'edit'])->name('innut.edit');
 Route::post('fremstilling/{id}', [FremstillingController::class, 'update']);
 Route::post('fremstilling/{id}/tilbake', [FremstillingController::class, 'tilbake']);
+Route::get('fremstilling/print/{id}', [FremstillingController::class, 'print'])->name('innut.print');
 
 
 /* Profil routes  */

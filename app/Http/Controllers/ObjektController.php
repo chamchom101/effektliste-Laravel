@@ -10,7 +10,7 @@ class ObjektController extends Controller
 {
      public function index () {
 
-        $Objekter = Objekt::get();
+        $Objekter = Objekt::paginate(10);
         $felt = Felt::get();
         //$tests = Felt::with('Objekt')->get();
 

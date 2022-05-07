@@ -137,4 +137,15 @@ class FremstillingController extends Controller
 
 
     }
+
+    public function print(Request $request, $id) {
+
+        $rom = $request->input('rom');
+
+        $fremstillingPrint = Bruker::find($id);
+        //$printValues = Felt::where('bruker_id', $id)->latest('updated_at')->take($rom)->get();
+        $printValues = Felt::where('bruker_id', $id)->WhereNotNull('fremstilling_id')->latest('updated_at')->take($rom)->get();
+
+        return view('innut.print', compact('fremstillingPrint', 'printValues'));
+    }
 }

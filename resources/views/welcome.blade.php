@@ -68,8 +68,22 @@
                                     </div>
                                 </div>
                                 <div class="media-body my-auto">
-                                    <h4 class="font-weight-bolder mb-0"></h4>
-                                    <p class="card-text font-small-3 mb-0"></p>
+                                    <h4 class="font-weight-bolder mb-0">{{$countObjekter}}</h4>
+                                    <p class="card-text font-small-3 mb-0">Objekter</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                            <div class="media">
+                                <div class="avatar bg-light-success mr-2">
+                                    <div class="avatar-content">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag font-medium-5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="media-body my-auto">
+                                    <h4 class="font-weight-bolder mb-0">{{$countKategori}}</h4>
+                                    <p class="card-text font-small-3 mb-0">Kategorier</p>
                                 </div>
                             </div>
                         </div>

@@ -80,6 +80,12 @@
                     @endforeach
                     {{--END FOREACH--}}
                 </table>
+                <div class="row">
+                    <div class="col-12 mt-3 pb-3 pl-2">
+
+                {{$Objekter->links()}}
+            </div>
+                </div>
             </div>
         </div>
     </div>
