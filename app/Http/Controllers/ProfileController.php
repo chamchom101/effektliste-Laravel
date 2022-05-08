@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Felt;
+use App\Models\Logg;
 use App\Models\Bruker;
 use App\Models\Objekt;
 use App\Models\Profile;
@@ -109,6 +110,17 @@ class ProfileController extends Controller
                 
                     ]);
 
+                    Logg::create([
+
+                        
+                        'new' => $request->maxCreate2,
+                        'name' => 'Opprettet',
+                        'txt' => 'Hassan Cherry',
+                        'bruker_id' => $request->bruker_id
+            
+            
+                    ]);
+
                     
                 
                 
@@ -195,12 +207,89 @@ class ProfileController extends Controller
         //$activity->description = $request->input('objekt');
 
 
-        
+        // Loggsystem -> Henter data før endring
+        $getOldData = $feltUpdate->getOriginal('title');
+        $getOldDataRom = $feltUpdate->getOriginal('antall_rom');
+        $getOldDataLager = $feltUpdate->getOriginal('antall_lager');
+        $getOldDataInfo = $feltUpdate->getOriginal('info');
 
 
 
        // dd($request->all());
         $feltUpdate->save();
+
+
+         // Loggsystem -> Lagrer data når vi redigerer
+        if($feltUpdate->wasChanged('title')) {
+            //$getOldData = $feltUpdate->getRawOriginal('title');
+            
+            Logg::create([
+
+              'old' => $getOldData,
+              'new' => $feltUpdate->title,
+              'name' => 'Redigert',
+              'txt' => 'Hassan Cherry',
+              'bruker_id' => $feltUpdate->bruker_id
+  
+  
+          ]);
+
+
+ 
+      } 
+      
+       if ($feltUpdate->wasChanged('antall_rom')) {
+
+
+        Logg::create([
+
+            'old' => $getOldDataRom,
+            'new' => $feltUpdate->antall_rom,
+            'name' => 'Redigertrom',
+            'txt' => $feltUpdate->title,
+            'bruker_id' => $feltUpdate->bruker_id
+
+
+        ]);
+
+
+      }
+
+      if ($feltUpdate->wasChanged('antall_lager')) {
+
+
+        Logg::create([
+
+            'old' => $getOldDataLager,
+            'new' => $feltUpdate->antall_lager,
+            'name' => 'Redigertlager',
+            'txt' => $feltUpdate->title,
+            'bruker_id' => $feltUpdate->bruker_id
+
+
+        ]);
+
+
+      }
+
+      if ($feltUpdate->wasChanged('info')) {
+
+
+        Logg::create([
+
+            'old' => $getOldDataInfo,
+            'new' => $feltUpdate->info,
+            'name' => 'info',
+            'txt' => $feltUpdate->title,
+            'bruker_id' => $feltUpdate->bruker_id
+
+
+        ]);
+
+
+      }
+
+      
         //$activity->save();
 
         // $lastId =  DB::table('activity_log')->latest('id')->first();
@@ -208,14 +297,19 @@ class ProfileController extends Controller
         // $loggUpdate->causer_id = $request->input('bruker_id');
         // $loggUpdate->save();
 
+       
+
 
 
 
 
         if($feltUpdate == true) {
 
+           // dd($getOldData);
+
+
             return  redirect('/profile/' . $feltUpdate->bruker_id)->withSuccessMessage('Redigering gjennomført uten feil');
-            //dd($feltUpdate);
+           
 
         } else {
 
@@ -231,16 +325,25 @@ class ProfileController extends Controller
 
     }
 
-    public function destroy ($id) {
+    public function destroy (Request $request, $id) {
 
         $deleteFelt = Felt::find($id);
+        $hentBrukerId = $deleteFelt->bruker_id;
+        $hentBrukerTitle = $deleteFelt->title;
         $deleteFelt->delete(); 
 
-        
-
-            
 
         if($deleteFelt == true) {
+
+            $loggFor = Logg::create([
+
+                'new' => $hentBrukerTitle,
+                'name' => 'Slettet',
+                'txt' => 'Hassan Cherry',
+                'bruker_id' => $hentBrukerId,
+    
+    
+            ]);
 
             return  back()->withSuccessMessage('' . $deleteFelt->title . ' Slettet uten feil');
 

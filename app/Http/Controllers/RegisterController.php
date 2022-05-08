@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Felt;
+use App\Models\Logg;
 use App\Models\Bruker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -71,13 +72,26 @@ class RegisterController extends Controller
 
     }
 
-    public function destroy ($id){
+    public function destroy (Request $request, $id){
+
+       
 
         $bruker = Bruker::find($id);
         $bruker->delete();
+
+        $loggFor = Logg::create([
+
+            'name' => 'Slettet',
+            'txt' => 'Slettet Av Hassan Cherry',
+            'bruker_id' => $id
+
+
+        ]);
         
+
         //Sletter alle effekter som tilhører bruker
         DB::table('felts')->where('bruker_id', $id)->delete();
+
 
         if($bruker == true) {
 

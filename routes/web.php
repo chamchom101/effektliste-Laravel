@@ -1,23 +1,25 @@
 <?php
 
-use App\Http\Controllers\admin\SettingsController;
-use App\Http\Controllers\AdminController;
 use App\Models\Felt;
+use App\Models\Fremstilling;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\LoggController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\VideoController;
 use App\Http\Controllers\BrukerController;
 use App\Http\Controllers\ObjektController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VersionController;
 use App\Http\Controllers\DokumentController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FremstillingController;
+use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\CreateKategoriController;
-use App\Http\Controllers\VersionController;
-use App\Http\Controllers\VideoController;
-use App\Models\Fremstilling;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,6 +100,8 @@ Route::get('admin/settings', [SettingsController::class, 'index'])->name('admin.
 /* Video Route */
 Route::get('video', [VideoController::class, 'index'])->name('video.view');
 
+Route::get('logg/bruker/{id}', [LoggController::class, 'index'])->name('logg.view');
+
 
 
 
@@ -105,15 +109,7 @@ Route::get('/log/{id}', [LogController::class, 'index'])->name('log.view');
 
 
 
-Route::get('test', function(Request $request){
-
-    $one = Felt::find(37);
-    //$two = $one->antall_rom - 3;
-    $tre = $request->flash('Hassan');
-
-    dd($tre);
-
-});
+Route::get('test', [TestController::class, 'index'])->name('test');
 
 
 Route::get('dev/{id}', function() {
