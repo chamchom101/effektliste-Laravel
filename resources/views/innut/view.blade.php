@@ -26,7 +26,7 @@
                            
                             <div class="card">
                                 <div class="card-header collapsed" id="heading200" data-toggle="collapse" role="button" data-target="#collapse200" aria-expanded="false" aria-controls="collapse200">
-                                    <span class="lead collapse-title"> {{$FremstillingData->navn}}</span>
+                                    <span class="lead collapse-title"> <a href="{{route('profile', $FremstillingData->id)}}">{{$FremstillingData->navn}}</a> </span>
                                 </div>
                                 @foreach ($FremstillingData->fremstilling as $fr )
                                 <div id="collapse200" class="collapse" aria-labelledby="heading200" data-parent="#accordionExample0" style="">

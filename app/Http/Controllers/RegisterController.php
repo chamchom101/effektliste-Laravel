@@ -91,6 +91,8 @@ class RegisterController extends Controller
 
         //Sletter alle effekter som tilhører bruker
         DB::table('felts')->where('bruker_id', $id)->delete();
+        //Sletter loggen til bruker
+        DB::table('loggs')->where('bruker_id', $id)->delete();
 
 
         if($bruker == true) {

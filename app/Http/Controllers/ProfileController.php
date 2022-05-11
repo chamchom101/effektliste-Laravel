@@ -115,7 +115,7 @@ class ProfileController extends Controller
                         
                         'new' => $request->maxCreate2,
                         'name' => 'Opprettet',
-                        'txt' => 'Hassan Cherry',
+                        'txt' => $request->rom,
                         'bruker_id' => $request->bruker_id
             
             

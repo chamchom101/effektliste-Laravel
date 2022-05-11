@@ -91,6 +91,11 @@ class Felt extends Model
         return $this->hasMany(Fremstilling::class);
     }
 
+    public function fremstillings() {
+
+        return $this->belongsTo(Fremstilling::class);
+    }
+
     public function objekt () {
 
         return $this->hasMany(Objekt::class);

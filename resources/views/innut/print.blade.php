@@ -57,11 +57,12 @@
                                     <th class="py-1">Objekt og beskrivelse</th>
                                     <th class="py-1">På rom</th>
                                     <th class="py-1">På lager</th>
-                                    <th class="py-1">Kategori</th>
+                                    
                                     <th class="py-1">Redigert</th>
                                   </tr>
                               </thead>
-                             @foreach ($printValues->sortByDesc('updated_at') as $print)
+                             @foreach ($printValues->sortByDesc('updated_at') as $print) 
+                             @foreach ($print->fremstilling as $printF)
                                 
                                      
                                  
@@ -69,22 +70,21 @@
                               <tbody>
                                   <tr>
                                       <td class="py-1 pl-4">
-                                          <p class="font-weight-semibold mb-25">{{$print->title}}</p>
+                                          <p class="font-weight-semibold mb-25">{{$printF->name}}</p>
                                           <p class="text-muted text-nowrap">
-                                            {{$print->info}}
+                                            {{$printF->info}}
                                           </p>
                                       </td>
                                       <td class="py-1">
-                                          <strong>{{$print->antall_rom}}</strong>
+                                          <strong>{{$printF->rom  ?? ''}}</strong>
                                       </td>
                                       <td class="py-1">
-                                          <strong>{{$print->antall_lager}}</strong>
+                                          <strong>{{$printF->lager  ?? ''}}</strong>
                                       </td>
-                                      <td class="py-1">
-                                          <strong>{{$print->kategori->titel}}</strong>
-                                      </td>
-                                      <td><strong>{{$print->updated_at->format('d/m/Y')}}</strong></td>
+                                    
+                                      <td><strong>{{$printF->updated_at->format('d/m/Y')}}</strong></td>
                                   </tr>
+                                  @endforeach
                                   @endforeach
                                   
                               </tbody>

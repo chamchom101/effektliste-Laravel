@@ -21,7 +21,7 @@
                                     <h6>Opprettet</h6>
                                     <span class="timeline-event-time">{{$data->created_at->format('d-m-Y')}}</span>
                                 </div>
-                                <p><b>{{$data->new}}</b> lagt til effektliste</p>
+                                <p><b>({{$data->txt}}) {{$data->new}}</b> lagt til effektliste</p>
                                
                             </div>
                         </li>
@@ -34,7 +34,20 @@
                                     <h6>Redigert</h6>
                                     <span class="timeline-event-time">{{$data->created_at->format('d-m-Y')}}</span>
                                 </div>
-                                <p><b>{{$data->txt}}</b> endret fra <b>{{$data->old}}</b> til <b>{{$data->new}}</b></p>
+                                <p><b>{{$data->txt}}</b> på rom endret fra <b>{{$data->old}}</b> til <b>{{$data->new}}</b></p>
+                               
+                            </div>
+                        </li>
+
+                        @elseif($data->name == 'Redigertlager')
+                        <li class="timeline-item">
+                            <span class="timeline-point timeline-point-success timeline-point-indicator"></span>
+                            <div class="timeline-event">
+                                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
+                                    <h6>Redigert</h6>
+                                    <span class="timeline-event-time">{{$data->created_at->format('d-m-Y')}}</span>
+                                </div>
+                                <p><b>{{$data->txt}}</b> på lager endret fra <b>{{$data->old}}</b> til <b>{{$data->new}}</b></p>
                                
                             </div>
                         </li>

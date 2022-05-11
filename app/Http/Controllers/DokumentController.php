@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Felt;
 use App\Models\Bruker;
 use App\Models\Kategori;
+use App\Models\Fremstilling;
 use Illuminate\Http\Request;
 use Spatie\Activitylog\Models\Activity;
 
@@ -35,6 +36,8 @@ class DokumentController extends Controller
         //$printValues = Felt::where('bruker_id', $id)->latest()->take($rom)->get();
         //$date = \Carbon\Carbon::today()->subDays(30);
         $printValues = Felt::where('bruker_id', $id)->latest('updated_at')->take($rom)->get();
+        //$printValuesFrem = Fremstilling::where('bruker_id', $id)->take($rom)->get();
+        //$printValuesFrem = Felt::with('fremstillings')->where('bruker_id', $id)->get();
         $loggView = Activity::where('causer_id', $id)->get();
         
        // dd($test, $rom);

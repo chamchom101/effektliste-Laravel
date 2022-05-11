@@ -167,7 +167,7 @@
 
                                 <td>
                                 <div class="avatar-content">
-                                    <a href="{{route('log.view', $bruker->id)}}">
+                                    <a href="{{route('logg.view', $bruker->id)}}">
                                     <img src="../../../app-assets/images/icons/loggicon.png" alt="Toolbar svg">
                                     </a>
                                 </div>

@@ -17,4 +17,14 @@ class Fremstilling extends Model
 
         return $this->belongsTo(Bruker::class);
     }
+
+    public function fremstilling() {
+
+        return $this->belongsTo(Felt::class);
+    }
+
+    public function felt() {
+
+        return $this->belongsTo(Felt::class);
+    }
 }

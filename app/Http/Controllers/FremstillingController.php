@@ -103,6 +103,7 @@ class FremstillingController extends Controller
         $OppdaterID = Felt::find($FeltID);
         $OppdaterID->antall_rom = $request->input('rom') + $OppdaterID->antall_rom;
         $OppdaterID->antall_lager = $request->input('lager') + $OppdaterID->antall_lager;
+        $OppdaterID->fremstilling_id = NULL; //09.05.2022 Setter Fremstillings ID til NULL, når effektene sendes tilbake til lista.
         $OppdaterID->save();
 
         $FinnFeltID->delete();
@@ -144,7 +145,9 @@ class FremstillingController extends Controller
 
         $fremstillingPrint = Bruker::find($id);
         //$printValues = Felt::where('bruker_id', $id)->latest('updated_at')->take($rom)->get();
-        $printValues = Felt::where('bruker_id', $id)->WhereNotNull('fremstilling_id')->latest('updated_at')->take($rom)->get();
+        //$printValues = Felt::where('bruker_id', $id)->WhereNotNull('fremstilling_id')->latest('updated_at')->take($rom)->get();
+        $printValues = Felt::with('fremstillings')->where('bruker_id', $id)->WhereNotNull('fremstilling_id')->latest('updated_at')->take($rom)->get();
+        $getNewPrintValue = $request->input('rom');
 
         return view('innut.print', compact('fremstillingPrint', 'printValues'));
     }
