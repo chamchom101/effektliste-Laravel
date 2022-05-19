@@ -59,6 +59,9 @@
                             <label for="credit-card">Litt info om objektet</label>
                             <input type="text" name="info" class="form-control credit-card-mask" placeholder="" id="credit-card">
                         </div>
+
+                              
+
                         <div class="col-xl-4 col-md-6 col-sm-12">
                             <label for="credit-card">Kategori</label>
                             <select class="form-control" name="kategori" id="basicSelect">
@@ -106,7 +109,9 @@
                         </div>
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                             <label for="image">Last opp bildet</label>
+                            
                             <input type="file" class="form-control-file" value="test" name="image" id="exampleFormControlFile1">
+                            
                         </div>
 
                        

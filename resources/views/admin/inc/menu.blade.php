@@ -15,7 +15,7 @@
         
         <li class=" navigation-header"><span data-i18n="User Interface">General</span><i data-feather="more-horizontal"></i>
         </li>
-        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="settings"></i><span class="menu-title text-truncate" data-i18n="Typography">Systemvalg</span></a>
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('admin.settings')}}"><i data-feather="settings"></i><span class="menu-title text-truncate" data-i18n="Typography">Systemvalg</span></a>
         </li>
         <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('register')}}"><i data-feather="git-commit"></i><span class="menu-title text-truncate" data-i18n="Typography">Version</span></a>
         </li>

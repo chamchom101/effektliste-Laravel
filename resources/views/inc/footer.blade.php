@@ -44,6 +44,8 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{{asset ('app-assets/js/scripts/forms/form-select2.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/extensions/toastr.min.js')}}"></script>
     <script src="{{asset ('app-assets/js/scripts/extensions/ext-component-toastr.js')}}"></script>
@@ -51,8 +53,7 @@
     <script src="{{asset ('app-assets/js/scripts/forms/form-number-input.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/jquery/jquery-ui.js')}}"></script>
     <script src="{{asset ('app-assets/vendors/js/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset ('app-assets/vendors/js/forms/select/select2.full.min.js')}}"></script>
-    <script src="{{asset ('app-assets/js/scripts/forms/form-select2.js')}}"></script>
+
 
     
     {{-- <script src="{{asset ('app-assets/vendors/js/jquery/jquery-3.6.0.min.js')}}"></script> --}}
@@ -121,6 +122,10 @@ $("#myModal").css("z-index", "1500");
 
 
   </script>
+
+  <script>
+
+    </script>
 
 <script type="text/javascript">
   function update() {

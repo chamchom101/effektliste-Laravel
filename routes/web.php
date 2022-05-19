@@ -19,6 +19,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FremstillingController;
 use App\Http\Controllers\admin\SettingsController;
+use App\Http\Controllers\admin\VersionsController;
 use App\Http\Controllers\CreateKategoriController;
 
 /*
@@ -95,6 +96,7 @@ Route::get('admin', [AdminController::class, 'view'])->name('admin');
 Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('auth');
 Route::post('admin', [AdminController::class, 'login'])->name('login');
 Route::get('admin/settings', [SettingsController::class, 'index'])->name('admin.settings')->middleware('auth');
+Route::get('admin/version', [VersionsController::class, 'index'])->name('admin.version')->middleware('auth');
 
 
 /* Video Route */

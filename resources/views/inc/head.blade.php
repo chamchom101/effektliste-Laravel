@@ -18,6 +18,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/vendors/css/vendors.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/vendors/css/charts/apexcharts.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset ('app-assets/vendors/css/extensions/toastr.min.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
