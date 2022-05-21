@@ -45,7 +45,7 @@
                             <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                 <label for="credit-card">Antall på rom</label>
                                 <div class="input-group input-group-lg bootstrap-touchspin">
-                                    <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected"></span><input type="number" class="touchspin form-control" name="rom" value="{{$editObjekt->antall_rom}}"><span class="input-group-btn input-group-append bootstrap-touchspin-injected"></span>
+                                    <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected"></span><input type="number" class="touchspin form-control" name="rom" value="{{$editObjekt->antall_rom}}"><span class="input-group-btn input-group-append bootstrap-touchspin-injected"></span><b>{{$editObjekt->max_rom}}</b>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-md-6 col-sm-12 mb-2">

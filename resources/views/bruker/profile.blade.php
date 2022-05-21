@@ -252,9 +252,12 @@
                              @if ($felt->max_rom < $felt->antall_rom )
                             <tr style="background-color: #ffcccc">
                                 <td>
-                                    @if($felt->tillatt == 1)
+                                    @if($felt->tillatt == 1 )
                                     <img src="../../../app-assets/images/icons/feil.png" class="mr-75" height="20" width="20" alt="Angular">
                     <span class="font-weight-bold text-danger">{{$felt->title}}</span>
+                                    @elseif($felt->fremstilling_id != NULL)
+                                    <img src="../../../app-assets/images/icons/log-out.png" class="mr-75" height="20" width="20" alt="Angular">
+                                    <span class="font-weight-bold"><a href="{{route('innut')}}">{{$felt->title}}</a></span>
                                     @else 
                                     <img src="../../../app-assets/images/icons/star.svg" class="mr-75" height="20" width="20" alt="Angular">
                     <span class="font-weight-bold">{{$felt->title}}</span>
@@ -327,6 +330,9 @@
                                     @if($felt->tillatt == 1)
                                     <img src="../../../app-assets/images/icons/feil.png" class="mr-75" height="20" width="20" alt="Angular">
                     <span class="font-weight-bold text-danger">{{$felt->title}}</span>
+                                 @elseif($felt->fremstilling_id != NULL)
+                                 <img src="../../../app-assets/images/icons/log-out.png" class="mr-75" height="20" width="20" alt="Angular">
+                    <span class="font-weight-bold"><a href="{{route('innut')}}">{{$felt->title}}</a></span>
                                     @else 
                                     <img src="../../../app-assets/images/icons/star.svg" class="mr-75" height="20" width="20" alt="Angular">
                     <span class="font-weight-bold">{{$felt->title}}</span>

@@ -176,6 +176,7 @@ class ProfileController extends Controller
         $getObjekt = Felt::where('id', $id)->get();
         $katObjekt = Kategori::get();
         $headerObjekt = Kategori::find($id);
+        //$getObjektCount = Objekt::with('felts')->where('name', '=', 'title')->get();
 
         return view('bruker.edit', compact('editObjekt', 'katObjekt', 'headerObjekt', 'getObjekt', 'getKatName'));
 
