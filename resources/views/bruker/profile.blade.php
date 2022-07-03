@@ -174,17 +174,20 @@
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
+
                                 <tr>
                                     <th>Punkt</th>
-                                    <th>Antall</th>
-                                    <th>Status</th>
+                                    <th>På Lager</th>
+                                    <th>Info</th>
                                     <th>Bilde</th>
-                                    <th>Mer..</th>
+                                    <th>Mer</th>
+
                                 </tr>
+                               
                             </thead>
                             <tbody>
                             @foreach ($tests as $test)
-                            @foreach ($test->felt->sortBy('kategori_id') as $felt )
+                            @foreach ($test->felt->sortBy('created_at') as $felt )
                             @if($felt->pin == 1)
                                 <tr>
                                     <td>

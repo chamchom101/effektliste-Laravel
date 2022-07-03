@@ -9,9 +9,9 @@
             <div class="card card-congratulation-medal">
                 <div class="card-body">
                     <h5>Version</h5>
-                    <p class="card-text font-small-3">23.04.2022</p>
+                    <p class="card-text font-small-3">21.05.2022</p>
                     <h3 class="mb-75 mt-2 pt-50">
-                        <a href="javascript:void(0);">1.03</a>
+                        <a href="javascript:void(0);">1.07</a>
                     </h3>
                     <button type="button" onclick="location.href='{{route('version.view')}}'" class="btn btn-primary waves-effect waves-float waves-light">Les Mer..</button>
                     <img src="../../../app-assets/images/illustration/badge.svg" class="congratulation-medal" alt="Medal Pic">
@@ -106,7 +106,7 @@
                     <div class="alert-body">
                     
                         <strong>Info:</strong> * Informasjon om oppdateringer og endringer.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp.</br>
-                        <strong>Oppdatering: V.1.03</strong></br>
+                        <strong>Oppdatering: V.1.07</strong></br>
                         <strong>Info:</strong> Ved feil, kontkat meg på hassan.cherry@kriminalomsorg.no
                     </div>
                 </div>

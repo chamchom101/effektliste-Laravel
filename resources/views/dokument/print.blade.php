@@ -20,7 +20,7 @@
                               </div>
                               <p class="mb-25">Østfold friomsorgskontor</p>
                               <p class="mb-25">Avdeling fengsel</p>
-                              <p class="mb-0">Ravneberget 30 17?? </p>
+                              <p class="mb-0">Ravneberget </p>
                           </div>
                           <div class="mt-md-0 mt-2">
                               <h4 class="font-weight-bold text-right mb-1">INNSATT NUMMER# {{$Bruker->innsatt_nummer}}</h4>
@@ -81,6 +81,7 @@
                                     <th class="py-1">På rom</th>
                                     <th class="py-1">På lager</th>
                                     <th class="py-1">Kategori</th>
+                                    <th class="py-1">Redigert</th>
                                   </tr>
                               </thead>
                               @foreach ($getBrukers as $getBruker )
@@ -88,10 +89,10 @@
                               <tbody>
                                   <tr>
                                       <td class="py-1 pl-4">
-                                          <p class="font-weight-semibold mb-25">{{$felt->title}}</p>
-                                          <p class="text-muted text-nowrap">
+                                          <h4 class="font-weight-semibold mb-25">{{$felt->title}}</h4>
+                                          <h5 class="text-muted text-nowrap mt-2">
                                             {{$felt->info}}
-                                          </p>
+                                          </h5>
                                       </td>
                                       <td class="py-1">
                                           <strong>{{$felt->antall_rom}}</strong>
@@ -102,6 +103,7 @@
                                       <td class="py-1">
                                           <strong>{{$felt->kategori->titel ?? ''}}</strong>
                                       </td>
+                                      <td><strong>{{$felt->updated_at->format('d/m/Y')}}</strong></td>
                                   </tr>
                                   
                                   @endforeach

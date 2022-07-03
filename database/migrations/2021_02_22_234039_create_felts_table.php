@@ -20,7 +20,15 @@ class CreateFeltsTable extends Migration
             $table->string('title');
             $table->integer('antall_rom');
             $table->integer('antall_lager');
+            $table->text('info');
+            $table->bigInteger('bruker_id');
+            $table->bigInteger('fremstilling_id');
+            $table->text('image');
+            $table->integer('tillatt');
+            $table->integer('max_rom');
+            $table->bigInteger('pin');
             $table->timestamps();
+
         });
     }
 

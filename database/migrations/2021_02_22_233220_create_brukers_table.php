@@ -17,7 +17,11 @@ class CreateBrukersTable extends Migration
             $table->id();
             $table->string('navn');
             $table->integer('hylle');
-            $table->string('rom');
+            $table->innsattt_nummer('string');
+            $table->betjent_navn('string');
+            //$table->string('rom');
+            $table->integer('is_active');
+            $table->string('image');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@
 
                        
 
-
+                        
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                             <label for="mytitle">Objekt</label>
 
@@ -75,7 +75,7 @@
                         </div>
                         <input type="hidden" value="{{$profiles->id}}" name="bruker_id"> 
                         
-                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2 border">
                             <label for="rom">Antall på rom</label>
                             <div class="input-group input-group-lg bootstrap-touchspin">
                                 @foreach ($obj as $objekter)
@@ -84,13 +84,13 @@
                                 <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected"></span><input type="number" class="touchspin form-control" name="rom" value="0"><span class="input-group-btn input-group-append bootstrap-touchspin-injected"></span>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2 border">
                             <label for="lager">Antall på lager</label>
                             <div class="input-group input-group-lg bootstrap-touchspin">
                                 <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected"></span><input type="number" class="touchspin form-control" name="lager" value="0"><span class="input-group-btn input-group-append bootstrap-touchspin-injected"></span>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2 border">
                             <label for="lager">Ikke tillatt</label>
                             <div class="custom-control custom-control-danger custom-checkbox">
                                 <input type="checkbox" name="tillatt" class="custom-control-input" value="1" id="colorCheck5">
@@ -98,7 +98,7 @@
                             </div>
                             </div>
                              
-                            <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                            <div class="col-xl-4 col-md-6 col-sm-12 mb-2 border">
                                 <label for="lager">Pin</label>
                                 <div class="custom-control custom-control-danger custom-checkbox">
                                     <input type="checkbox" name="viktig" class="custom-control-input" value="1" id="colorCheck6">
@@ -107,7 +107,7 @@
                                 </div>
 
                         </div>
-                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2 border">
                             <label for="image">Last opp bildet</label>
                             
                             <input type="file" class="form-control-file" value="test" name="image" id="exampleFormControlFile1">

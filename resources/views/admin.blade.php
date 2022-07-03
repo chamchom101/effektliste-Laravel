@@ -82,21 +82,21 @@
                                             </g>
                                         </g>
                                     </svg>
-                                    <h2 class="brand-text text-primary ml-1">Admin</h2>
+                                    <h2 class="brand-text text-primary ml-1">Logg deg inn</h2>
                                 </a>
 
-                                <h4 class="card-title mb-1">Kom deg vekk 👋</h4>
+                                <h4 class="card-title mb-1">Effekter 👋</h4>
                                 <p class="card-text mb-2"></p>
 
                                 <form class="auth-login-form mt-2" action="index.html" method="POST">
                                     <div class="form-group">
-                                        <label for="login-email" class="form-label">Email</label>
+                                        <label for="login-email" class="form-label">Bruker</label>
                                         <input type="text" class="form-control" id="login-email" name="email" placeholder="Brukernavn" aria-describedby="login-email" tabindex="1" autofocus />
                                     </div>
 
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between">
-                                            <label for="login-password">Password</label>
+                                            <label for="login-password">Passord</label>
                                             
                                         </div>
                                         <div class="input-group input-group-merge form-password-toggle">

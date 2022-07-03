@@ -36,60 +36,60 @@ use App\Http\Controllers\CreateKategoriController;
 
 //Route::get('bruker', [BrukerController::class, 'store'])->name('bruker');
 
-Route::get('/', [BrukerController::class, 'index'])->name('welcome');
+Route::get('/', [BrukerController::class, 'index'])->name('welcome')->middleware('auth');
 
 //Route::get('profile/{id}', [BrukerController::class, 'profile'])->name('profile');
 
 /* Kategori->name (Blir ikke brukt) */
-Route::get('kategori', [KategoriController::class, 'index'])->name('kategori');
-Route::post('kategori', [KategoriController::class, 'hent']);
+Route::get('kategori', [KategoriController::class, 'index'])->name('kategori')->middleware('auth');
+Route::post('kategori', [KategoriController::class, 'hent'])->middleware('auth');
 
-Route::get('kategori/create', [CreateKategoriController::class, 'index'])->name('kategori.create');
-Route::post('kategori', [CreateKategoriController::class, 'store']);
-Route::get('kategori/{id}/edit', [CreateKategoriController::class, 'edit'])->name('kategori.edit');
-Route::put('kategori/{id}', [CreateKategoriController::class, 'update']);
-Route::get('kategori/{id}', [CreateKategoriController::class, 'destroy'])->name('kategori.destroy');
+Route::get('kategori/create', [CreateKategoriController::class, 'index'])->name('kategori.create')->middleware('auth');
+Route::post('kategori', [CreateKategoriController::class, 'store'])->middleware('auth');
+Route::get('kategori/{id}/edit', [CreateKategoriController::class, 'edit'])->name('kategori.edit')->middleware('auth');
+Route::put('kategori/{id}', [CreateKategoriController::class, 'update'])->middleware('auth');
+Route::get('kategori/{id}', [CreateKategoriController::class, 'destroy'])->name('kategori.destroy')->middleware('auth');
 
 
 /* Objekter Vise->lage->Redigere->slette */
-Route::get('objekt', [ObjektController::class, 'index'])->name('objekt.view');
-Route::post('objekt', [ObjektController::class, 'store']);
-Route::get('objekt/{id}/edit', [ObjektController::class, 'edit'])->name('objekt.edit');
-Route::put('objekt/{id}', [ObjektController::class, 'update']);
-Route::get('objekt/{id}', [ObjektController::class, 'destroy'])->name('objekt.destroy');
+Route::get('objekt', [ObjektController::class, 'index'])->name('objekt.view')->middleware('auth');
+Route::post('objekt', [ObjektController::class, 'store'])->middleware('auth');
+Route::get('objekt/{id}/edit', [ObjektController::class, 'edit'])->name('objekt.edit')->middleware('auth');
+Route::put('objekt/{id}', [ObjektController::class, 'update'])->middleware('auth');
+Route::get('objekt/{id}', [ObjektController::class, 'destroy'])->name('objekt.destroy')->middleware('auth');
 
 
 /* Registrering/Sletting av nye brukere */
-Route::get('register', [RegisterController::class, 'index'])->name('register');
-Route::post('register', [RegisterController::class, 'store']);
-Route::get('register/{id}/edit', [RegisterController::class, 'edit'])->name('register.edit');
-Route::put('register/{id}', [RegisterController::class, 'update']);
-Route::get('register/{id}', [RegisterController::class, 'destroy'])->name('register.destroy');
+Route::get('register', [RegisterController::class, 'index'])->name('register')->middleware('auth');
+Route::post('register', [RegisterController::class, 'store'])->middleware('auth');
+Route::get('register/{id}/edit', [RegisterController::class, 'edit'])->name('register.edit')->middleware('auth');
+Route::put('register/{id}', [RegisterController::class, 'update'])->middleware('auth');
+Route::get('register/{id}', [RegisterController::class, 'destroy'])->name('register.destroy')->middleware('auth');
 
 /* Fremstilling Route */ 
-Route::get('fremstilling', [FremstillingController::class, 'index'])->name('innut');
-Route::get('fremstilling/{id}/edit', [FremstillingController::class, 'edit'])->name('innut.edit');
-Route::post('fremstilling/{id}', [FremstillingController::class, 'update']);
-Route::post('fremstilling/{id}/tilbake', [FremstillingController::class, 'tilbake']);
-Route::get('fremstilling/print/{id}', [FremstillingController::class, 'print'])->name('innut.print');
+Route::get('fremstilling', [FremstillingController::class, 'index'])->name('innut')->middleware('auth');
+Route::get('fremstilling/{id}/edit', [FremstillingController::class, 'edit'])->name('innut.edit')->middleware('auth');
+Route::post('fremstilling/{id}', [FremstillingController::class, 'update'])->middleware('auth');
+Route::post('fremstilling/{id}/tilbake', [FremstillingController::class, 'tilbake'])->middleware('auth');
+Route::get('fremstilling/print/{id}', [FremstillingController::class, 'print'])->name('innut.print')->middleware('auth');
 
 
 /* Profil routes  */
-Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile');
-Route::post('profile/{id}', [ProfileController::class, 'store']);
-Route::get('profile/{id}/edit', [ProfileController::class, 'edit'])->name('bruker.edit');
-Route::get('profile/dokument/over/{id}', [ProfileController::class, 'over'])->name('bruker.over');
-Route::put('/profile/{id}', [ProfileController::class, 'update']);
-Route::get('profile/delete/{id}', [ProfileController::class, 'destroy']);
+Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
+Route::post('profile/{id}', [ProfileController::class, 'store'])->middleware('auth');
+Route::get('profile/{id}/edit', [ProfileController::class, 'edit'])->name('bruker.edit')->middleware('auth');
+Route::get('profile/dokument/over/{id}', [ProfileController::class, 'over'])->name('bruker.over')->middleware('auth');
+Route::put('/profile/{id}', [ProfileController::class, 'update'])->middleware('auth');
+Route::get('profile/delete/{id}', [ProfileController::class, 'destroy'])->middleware('auth');
 
 
-Route::get('dokument/view', [DokumentController::class, 'view'])->name('dokument.view');
-Route::get('dokument/{id}', [DokumentController::class, 'index'])->name('dokument.preview');
-Route::get('dokument/print/{id}', [DokumentController::class, 'print'])->name('dokument.print');
-Route::post('dokument/print/bruker/{id}', [DokumentController::class, 'printValue'])->name('dokument.printvalue');
+Route::get('dokument/view', [DokumentController::class, 'view'])->name('dokument.view')->middleware('auth');
+Route::get('dokument/{id}', [DokumentController::class, 'index'])->name('dokument.preview')->middleware('auth');
+Route::get('dokument/print/{id}', [DokumentController::class, 'print'])->name('dokument.print')->middleware('auth');
+Route::post('dokument/print/bruker/{id}', [DokumentController::class, 'printValue'])->name('dokument.printvalue')->middleware('auth');
 
 /* Version View */
-Route::get('version', [VersionController::class, 'view'])->name('version.view');
+Route::get('version', [VersionController::class, 'view'])->name('version.view')->middleware('auth');
 
 /*Admin Routes */
 Route::get('admin', [AdminController::class, 'view'])->name('admin');

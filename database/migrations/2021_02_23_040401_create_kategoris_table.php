@@ -16,6 +16,10 @@ class CreateKategorisTable extends Migration
         Schema::create('kategoris', function (Blueprint $table) {
             $table->id();
             $table->string('titel');
+            $table->bigInteger('bruker_id');
+            $table->bigInteger('felt_id');
+            $table->string('betjent');
+            $table->bigInteger('objekt_id');
             $table->timestamps();
         });
     }

@@ -47,12 +47,12 @@ class ObjektController extends Controller
          
          ]);
 
-         $createFelt = Felt::Create([
+         //$createFelt = Felt::Create([
 
             
 
 
-         ]);
+        // ]);
          
        }
 
